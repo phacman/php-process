@@ -1,0 +1,2090 @@
+Fabien Potencier (617):
+      2010-08-21 01:09:55 | 6f25f5b | renamed Symfony\Components to Symfony\Component
+      2010-09-16 10:55:44 | bcc019c | [Process] added a Process:isSucessful() method
+      2010-12-20 12:30:59 | 64a393a | [Process] tweaked php doc and fixed PhpProcess::run() return value
+      2011-02-22 20:58:15 | 6563d30 | added LICENSE files for the subtree repositories
+      2011-03-06 14:40:06 | 02e9773 | replaced symfony-project.org by symfony.com
+      2011-03-24 11:10:42 | 4ad2d88 | [Process] moved protected to private
+      2011-03-24 11:13:58 | 393cc2a | [Process] tagged the guaranteed BC API
+      2011-03-24 11:15:33 | 64a1663 | [Process] fixed previous commit
+      2011-04-01 20:07:53 | 17e4357 | [Process] changed run() behavior to always populate getOutput() and getErrorOutput()
+      2011-04-02 12:08:01 | 5d60173 | [Process] added some missing accessors/mutators
+      2011-04-12 13:04:35 | 9dce933 | [Process] made default options overridable
+      2011-04-26 17:01:29 | dd37cd4 | Merge remote branch 'schmittjoh/process'
+      2011-04-26 17:18:21 | 864deab | [Process] changed ExecutableFinder to return false instead of throwing an exception when the executable is not found
+      2011-06-23 13:47:31 | dfa1184 | [Console] fixed Process exit code
+      2011-06-23 15:39:36 | 9d379d2 | fixed CS
+      2011-07-08 11:14:48 | 2eff085 | [Process] removed workaround as it seems to not work anymore after the recent changes
+      2011-07-12 10:16:22 | 83186a5 | [Process] fixed CS (tag: v2.0.1, tag: v2.0.0)
+      2011-09-29 19:40:43 | 3e2ac08 | updated composer.json for 2.1
+      2011-11-01 15:30:24 | 4215ad4 | updated composer.json files to contain information about autoloading and target dirs
+      2011-11-01 15:32:44 | 69817b4 | merged 2.0
+      2011-11-02 15:42:41 | 9e7697f | bumped Symfony version in composer.json files to 2.0.5 (tag: v2.0.5)
+      2011-11-02 17:18:45 | 8ec855d | bumped Symfony version to 2.0.6-DEV (tag: v2.0.6)
+      2011-11-17 09:58:37 | 18a7862 | bumped Symfony version in composer.json files to 2.0.7
+      2011-12-07 22:28:03 | 97048b6 | [Process] introduced usage of PHP_BINARY (available as of PHP 5.4) (tag: v2.0.7)
+      2011-12-08 18:36:57 | 28b4df6 | merged 2.0
+      2011-12-18 15:42:02 | e20fd95 | merged branch lsmith77/component_readmes (PR #2561)
+      2011-12-18 17:18:13 | 77d22a3 | tweaked the README files
+      2011-12-18 17:48:17 | 4438125 | merged 2.0
+      2012-01-05 17:51:20 | 09ad3e8 | removed the version attribute in all composer.json files (tag: v2.0.9, tag: v2.0.10)
+      2012-01-05 17:54:04 | ff5b897 | merged 2.0
+      2012-01-08 23:42:19 | 9651247 | Revert "merged 2.0"
+      2012-02-05 15:11:37 | 1236c70 | [Process] added some constant to avoid harcoded strings
+      2012-02-06 10:00:39 | 379b35a | [Process] fixed usage of constants in closure
+      2012-02-13 10:31:37 | f381eee | [Process] added Process::getExitCodeText() (closes #2818)
+      2012-02-22 21:59:56 | 8b2aea5 | merged 2.0
+      2012-03-05 18:17:37 | 5bca0c3 | merged branch Seldaek/processb (PR #3381)
+      2012-03-05 18:19:26 | d9db1dc | [Process] fixed CS
+      2012-03-08 22:29:35 | 0aad81a | merged 2.0
+      2012-03-23 15:59:10 | 191af4b | [Process] fixed CS
+      2012-03-23 16:02:23 | e3fd2b9 | [Process] renamed waitForTermination() to wait()
+      2012-03-23 22:56:05 | 2afb065 | merged branch schmittjoh/processFailedException (PR #3633)
+      2012-03-28 17:43:52 | 05d2c2b | moved component and bridge unit tests to the src/ directory
+      2012-04-07 11:10:50 | 20a23f7 | fixed CS
+      2012-04-07 22:15:29 | 6b79e8b | [Process] added a note about user-defined error exist codes
+      2012-04-26 23:35:39 | 718655f | [Process] added CHANGELOG
+      2012-04-27 21:55:40 | 7a92d8a | Revert "merged branch Seldaek/master (PR #4133)"
+      2012-05-01 19:59:34 | 1bc1398 | merged branch willdurand/fix-components (PR #4155)
+      2012-05-07 12:29:08 | 106f2db | updated minimum PHP version to 5.3.3
+      2012-05-20 20:15:10 | cfeeff8 | fixed CS (tag: v2.0.17, tag: v2.0.16, tag: v2.0.15)
+      2012-05-20 20:16:37 | b34a96e | merged 2.0
+      2012-05-22 00:27:15 | 2917ec0 | fixed CS
+      2012-07-09 16:50:58 | 2cd16e5 | fixed CS
+      2012-07-10 17:19:05 | 4255f4e | [Process] removed uninteresting tests
+      2012-07-10 17:21:23 | acfc0c7 | [Process] fixed setTimeout() to not allow negative timeout values (closes #4647)
+      2012-07-11 11:39:13 | 87965e1 | [Process] re-added the possibility to set the Process timeout to null (to disable it) (closes #4843)
+      2012-07-11 16:21:05 | b492b31 | [Process] fixed setting the timeout to null
+      2012-07-11 16:45:17 | f78e5d1 | [Process] remade ProcessBuilder::setTimeout fluent
+      2012-07-13 23:21:01 | 5ec4b91 | raised the minimum version of PHP to 5.3.4 (closes #3856)
+      2012-07-15 14:13:51 | 1d66feb | Revert "raised the minimum version of PHP to 5.3.4 (closes #3856)"
+      2012-09-06 22:45:30 | 8c3152e | udpated composer.json to 2.2
+      2012-09-18 21:05:11 | be58108 | merged branch romainneutron/ProcessExceptions (PR #5398)
+      2012-09-19 10:14:24 | fa84414 | Merge branch '2.1'
+      2012-09-28 21:52:09 | c305a52 | Merge branch '2.1'
+      2012-10-03 18:02:00 | ef82c55 | [Process] fixed previous merge
+      2012-10-04 18:20:59 | 1456f9a | merged branch boombatower/process-restart (PR #5456)
+      2012-10-04 18:21:40 | a523a1c | [Process] updated CHANGELOG
+      2012-10-04 18:23:11 | 7394032 | [Process] fixed phpdoc
+      2012-10-04 18:37:34 | 49871ad | [Process] fixed a unit test
+      2012-10-06 23:54:37 | a67692d | Merge branch '2.0' into 2.1
+      2012-10-06 23:56:03 | fc5b082 | merged branch xrstf/2.1 (PR #5687)
+      2012-10-06 23:57:59 | f029d06 | Merge branch '2.1'
+      2012-10-24 19:41:27 | 5e92828 | Merge branch '2.1'
+      2012-10-27 17:43:43 | 9e9e1e8 | merged branch romainneutron/ProcessIncrementalOutput (PR #5546)
+      2012-10-27 17:46:00 | bae97b6 | [Process] updated the CHANGELOG
+      2012-10-27 17:48:18 | f74cbc4 | [Process] fixed previous merge
+      2012-10-27 20:47:38 | 38139f7 | merged branch boombatower/process-status-5453 (PR #5455)
+      2012-10-27 20:54:34 | b35a2a4 | [Process] added unit tests, phpdoc, and reorganized methods from previous merge
+      2012-11-09 13:18:50 | 1b0498a | made usage of Composer autoloader for subtree-split unit tests
+      2012-11-13 18:08:04 | a11b312 | Merge branch '2.1'
+      2012-11-29 14:32:45 | 6ec0a14 | Merge branch '2.1'
+      2012-12-06 17:11:58 | a38d32f | merged branch asm89/enhance-processbuilder (PR #5853)
+      2012-12-11 14:40:22 | 7468a49 | fixed CS
+      2012-12-11 14:41:17 | e6f65ee | Merge branch '2.1'
+      2012-12-11 14:49:22 | 3a4f42f | fixed CS
+      2012-12-20 11:22:35 | 7f55bdf | Merge branch '2.1'
+      2013-01-04 20:58:00 | d31711c | updated license year
+      2013-01-04 20:59:43 | d498d5d | updated license year
+      2013-01-04 21:00:54 | 3f805f6 | Merge branch '2.0' into 2.1
+      2013-01-04 21:02:19 | a54810f | Merge branch '2.1'
+      2013-01-05 01:46:41 | 9c9d188 | merged branch romainneutron/StreamSelect (PR #6540)
+      2013-01-05 19:33:05 | a59c1a2 | Merge branch '2.1'
+      2013-01-05 22:24:35 | cad4674 | merged branch bschussek/exceptionfix (PR #6582)
+      2013-01-09 12:51:07 | d8b0d8c | removed the .gitattributes files (closes #6605, reverts #5674)
+      2013-01-11 17:37:04 | 78002b9 | Merge branch '2.0' into 2.1
+      2013-01-16 13:23:50 | 6de04ad | merged branch stloyd/bugfix/process_phpdocs (PR #6626)
+      2013-01-16 13:27:54 | 86ac6b3 | fixed CS (tag: v2.1.7)
+      2013-01-17 19:25:59 | dace2b9 | Merge branch '2.1'
+      2013-02-01 01:39:01 | c99475d | updated the branch alias in composer files
+      2013-02-17 17:00:38 | c6228a4 | Merge branch '2.1' into 2.2
+      2013-02-19 01:27:57 | d91b050 | Merge branch '2.0' into 2.1 (tag: v2.1.8)
+      2013-02-19 01:28:10 | dd5c62d | Merge branch '2.1' into 2.2 (tag: v2.2.0)
+      2013-02-19 01:28:20 | 6ebe4ba | Merge branch '2.2'
+      2013-03-23 11:49:54 | 521c1f4 | Merge branch '2.1' into 2.2 (tag: v2.2.1)
+      2013-03-23 12:06:49 | 46b24c5 | Merge branch '2.2'
+      2013-04-07 18:10:23 | 969059d | fixed CS
+      2013-04-07 18:41:36 | db29a04 | merged branch romainneutron/process-timeout (PR #7580)
+      2013-04-08 00:19:55 | ea29a7f | Merge branch '2.1' into 2.2
+      2013-04-08 00:25:23 | cb6bbfb | Merge branch '2.2'
+      2013-04-14 20:37:33 | 11e56d6 | merged branch romainneutron/EnhanceSigchild (PR #5476)
+      2013-04-20 16:28:25 | c8d26e3 | merged branch mcuadros/master (PR #7566)
+      2013-04-20 16:33:48 | 5d0f56e | [Process] fixed CS
+      2013-04-20 17:44:32 | 156eb9f | added missing information in the CHANGELOGS
+      2013-04-20 20:25:02 | a30f66e | merged branch romainneutron/process-builder-prefix (PR #7584)
+      2013-04-21 12:43:42 | a7177e4 | merged branch hason/process (PR #6796)
+      2013-04-22 08:27:25 | 597c47c | added missing license blocks
+      2013-04-22 08:28:56 | e1e28b2 | Merge branch '2.1' into 2.2
+      2013-04-22 08:30:07 | 04b4f33 | Merge branch '2.2'
+      2013-04-30 11:15:50 | bddb2b6 | Merge branch '2.1' into 2.2
+      2013-04-30 11:16:44 | 88e6cc3 | Merge branch '2.2'
+      2013-04-30 11:18:11 | 0843d08 | merged branch romainneutron/termsig-tests (PR #7874)
+      2013-04-30 11:21:49 | 9b6fe3a | fixed previous merge
+      2013-05-07 00:02:13 | 6056d02 | Merge branch '2.1' into 2.2 (tag: v2.2.2)
+      2013-05-07 00:03:44 | bb721b2 | Merge branch '2.2' (tag: v2.3.1, tag: v2.3.0)
+      2013-05-16 11:54:39 | 75c8101 | updated version to 2.4
+      2013-06-13 10:50:29 | de78e86 | [Process] moved env check to the Process class (refs #8227)
+      2013-06-13 11:51:49 | d8925ab | Merge branch '2.2' into 2.3
+      2013-06-23 12:16:02 | f12e585 | Merge branch '2.2' into 2.3
+      2013-06-23 12:16:33 | f3f84fe | Merge branch '2.3'
+      2013-07-01 16:24:43 | 4aafcf7 | fixed CS (tag: v2.3.2)
+      2013-07-08 17:37:01 | 998d489 | Merge branch '2.3'
+      2013-07-22 00:18:49 | 41801e8 | Merge branch '2.2' into 2.3
+      2013-07-22 00:19:01 | 808d38a | Merge branch '2.3'
+      2013-08-03 09:57:41 | 9ee8e77 | Merge branch '2.3'
+      2013-08-03 10:07:08 | fdad3ad | merged branch schmittjoh/processIdleTimeout (PR #8651)
+      2013-08-03 10:07:42 | c40a780 | [Process] updated the CHANGELOG
+      2013-08-14 00:18:00 | 3f807d3 | Merge branch '2.2' into 2.3
+      2013-08-14 16:57:12 | 3b90e53 | Merge branch '2.2' into 2.3
+      2013-08-14 16:58:19 | 00080d9 | merged branch romainneutron/fix-8742 (PR #8744)
+      2013-08-14 17:08:25 | cc178e1 | Merge branch '2.3'
+      2013-08-15 21:09:02 | a5f3e64 | Merge branch '2.3'
+      2013-08-21 11:58:38 | a49d145 | Merge branch '2.2' into 2.3
+      2013-08-21 11:59:24 | f82c7aa | Merge branch '2.3'
+      2013-08-21 19:32:30 | e4a89b7 | merged branch tgabi333/2.2 (PR #8815) (tag: v2.2.6)
+      2013-08-22 10:42:25 | 1e91553 | Merge branch '2.2' into 2.3 (tag: v2.3.4)
+      2013-08-22 10:44:20 | a738a85 | Merge branch '2.3'
+      2013-08-30 17:10:46 | 6e3b487 | Merge branch '2.2' into 2.3
+      2013-08-30 17:15:50 | a6f139c | Merge branch '2.3'
+      2013-09-07 20:29:51 | 501b64b | Merge branch '2.2' into 2.3 (closes #8955)
+      2013-09-07 20:33:13 | 95703b6 | Merge branch '2.3' (closes #8956)
+      2013-09-11 00:24:28 | d601c5e | Merge branch '2.2' into 2.3
+      2013-09-11 00:30:47 | bbec99a | Merge branch '2.3'
+      2013-09-12 16:57:47 | ca5703f | Merge branch '2.2' into 2.3
+      2013-09-12 16:59:51 | ba3568a | Merge branch '2.3'
+      2013-09-18 11:05:46 | 3d82871 | Merge branch '2.3'
+      2013-09-18 11:27:26 | 01ec66b | updated the composer install command to reflect changes in Composer (tag: v2.2.8, tag: v2.2.7)
+      2013-09-19 13:45:20 | e35e3ce | Merge branch '2.2' into 2.3 (tag: v2.3.5)
+      2013-09-19 13:47:34 | c1b7251 | Merge branch '2.3'
+      2013-09-27 17:52:58 | f44de14 | feature#8288 [Process] Added support for stdout and stderr flush (Issue #7884) (imobilis)
+      2013-09-27 18:30:49 | 4843b49 | feature#8191 [Process] Added ProcessBuilder::setEnvironmentVariables (lyrixx)
+      2013-09-27 18:31:42 | 4adfa47 | [Process] fixed tests (tag: v2.4.0-BETA1)
+      2013-10-10 00:51:36 | 94c9bdf | Merge branch '2.2' into 2.3
+      2013-10-10 00:52:22 | cb6a284 | Merge branch '2.3'
+      2013-10-10 00:52:58 | c7e4d13 | removed whitespaces (tag: v2.2.9)
+      2013-10-10 09:53:18 | 27b0fc6 | Merge branch '2.3'
+      2013-10-26 11:52:48 | c1c6c1f | Merge branch '2.2' into 2.3
+      2013-10-26 11:53:03 | 7ad0444 | Merge branch '2.3'
+      2013-10-30 12:30:20 | 8289810 | fixed CS (tag: v2.3.7)
+      2013-10-30 12:31:46 | 2b2c601 | Merge branch '2.3'
+      2013-10-30 12:33:58 | 225f6e8 | fixed CS (tag: v2.4.0-BETA2)
+      2013-11-09 16:03:12 | 88ccdd7 | minor #9407 [Process] Renamed flushOutput() and flushErrorOutput() to clearOutput() and clearErrorOutput() (bschussek)
+      2013-11-22 21:11:04 | ab6055d | minor #9466 [Process] fix phpdoc and timeout of 0 (Tobion)
+      2013-11-22 21:42:00 | ee1f56d | minor #9487 unify constructor initialization style throughout symfony (Tobion)
+      2013-11-24 01:11:41 | 96e7ab8 | Merge branch '2.2' into 2.3
+      2013-11-24 01:17:02 | ec874af | Merge branch '2.3' (tag: v2.4.0-RC1)
+      2013-11-25 00:15:22 | ceb4dd9 | updated version to 2.5
+      2013-11-25 13:14:57 | b495834 | fixed some typos (tag: v2.2.11, origin/2.2)
+      2013-11-25 18:49:41 | c22fe8f | Merge branch '2.2' into 2.3
+      2013-11-25 18:52:16 | b09d36a | fixed @expectedException class names (tag: v2.3.8)
+      2013-11-26 20:40:27 | 87738ff | Merge branch '2.3' into 2.4 (tag: v2.4.0)
+      2013-11-26 20:42:52 | 4d0f32a | Merge branch '2.4'
+      2013-12-27 19:08:19 | 2961b56 | fixed various typos
+      2013-12-28 11:46:05 | 684ed88 | fixed CS for lambdas
+      2013-12-28 12:12:03 | 621e071 | Merge branch '2.3' into 2.4
+      2013-12-28 12:12:58 | c7719da | Merge branch '2.4'
+      2013-12-29 01:34:46 | a82b12c | fixed typos
+      2013-12-29 01:39:51 | d33234e | Merge branch '2.3' into 2.4
+      2013-12-29 01:40:48 | 1de50ff | Merge branch '2.4'
+      2013-12-29 12:12:48 | 4272db4 | [Process] fixed HHVM support
+      2013-12-29 18:43:38 | 5223ec2 | Merge branch '2.3' into 2.4
+      2013-12-29 18:45:01 | a7fdd97 | Merge branch '2.4'
+      2014-01-05 06:10:50 | 58fdccb | Merge branch '2.3' into 2.4 (tag: v2.4.1)
+      2014-01-06 11:29:39 | 0531a70 | Merge branch '2.4'
+      2014-01-07 17:28:54 | 4f196b9 | Merge branch '2.3' into 2.4
+      2014-01-07 17:29:57 | d4b086c | Merge branch '2.4'
+      2014-01-24 18:36:35 | c36d6be | Merge branch '2.4'
+      2014-02-03 12:11:05 | 7f229ab | feature #8655 Adds PTY mode & convenience method mustRun() (schmittjoh)
+      2014-02-03 12:12:26 | 08e9340 | removed unneded test groups
+      2014-02-03 21:15:33 | 4ce5409 | Merge branch '2.3' into 2.4
+      2014-02-03 21:15:42 | 8a11fc0 | Merge branch '2.4'
+      2014-02-11 11:51:18 | f425f3f | fixed various inconsistencies (tag: v2.3.10)
+      2014-02-11 17:52:09 | c175448 | Merge branch '2.3' into 2.4 (tag: v2.4.2)
+      2014-02-11 17:52:21 | c9c0e81 | Merge branch '2.4'
+      2014-02-18 20:29:44 | bfa6a17 | Merge branch '2.3' into 2.4
+      2014-02-18 20:30:05 | 9d3f267 | Merge branch '2.4'
+      2014-02-24 20:20:54 | 1829069 | Merge branch '2.3' into 2.4
+      2014-02-24 20:21:51 | 0ae3bf5 | Merge branch '2.4'
+      2014-03-10 23:57:38 | cce5347 | bug #10412 [Process] Fix process status in TTY mode (romainneutron)
+      2014-03-12 22:29:58 | 1848a39 | Merge branch '2.3' into 2.4
+      2014-03-12 22:30:12 | 1adfbc0 | minor #10424 [2.4][Process] Fix some unit tests that create the process object instead of delegate it to the implementation (romainneutron)
+      2014-03-12 22:39:04 | 04880fb | bug #10153 [Process] Fixed data in pipe being truncated if not read before process termination (astephens25)
+      2014-03-13 09:40:32 | fa18e42 | Merge branch '2.3' into 2.4
+      2014-03-18 22:00:11 | af0a98d | bug #10480 [Process] Fixed fatal errors in getOutput and getErrorOutput when process was not started  (romainneutron)
+      2014-03-19 10:22:00 | bcce11c | bug #10479 [2.3][Process] Fix escaping on Windows (romainneutron)
+      2014-03-19 10:27:25 | 77250f8 | minor #10484 [Process] fix some typos and refactor some code (Tobion)
+      2014-03-19 19:52:49 | 029b757 | minor #10492 [2.3][Process] Remove unreachable code + avoid skipping tests in sigchild environment (romainneutron)
+      2014-03-26 15:35:33 | c09c3b0 | Merge branch '2.3' into 2.4 (tag: v2.4.3)
+      2014-03-26 15:51:10 | 1b6f4fc | Merge branch '2.4'
+      2014-03-29 12:34:36 | 31fb686 | [Process] fixed HHVM usage on the CLI (tag: v2.3.12)
+      2014-04-03 09:23:50 | 10767ae | Merge branch '2.3' into 2.4 (tag: v2.5.0-BETA1)
+      2014-04-12 21:44:00 | f6e3889 | made types consistent with those defined in Hack
+      2014-04-12 21:54:57 | 2689352 | made phpdoc types consistent with those defined in Hack
+      2014-04-16 10:51:57 | 4bcbdbe | fixed types in phpdocs
+      2014-04-16 12:02:57 | 77e1693 | Merge branch '2.3' into 2.4
+      2014-04-16 12:04:32 | ab5f18d | made types consistent with those defined in Hack
+      2014-04-16 12:08:40 | 741662b | Merge branch '2.4'
+      2014-04-16 12:09:01 | 2225c36 | made types consistent with those defined in Hack
+      2014-04-16 14:30:19 | 1d35eaa | fixed types in phpdocs
+      2014-04-16 14:34:31 | d8a5e01 | Merge branch '2.3' into 2.4
+      2014-04-16 14:36:21 | 93605ab | Merge branch '2.4'
+      2014-04-16 14:36:34 | 3841e30 | fixed types in phpdocs
+      2014-04-19 00:37:09 | 767454b | Merge branch '2.3' into 2.4
+      2014-04-19 00:40:13 | afe1b93 | Merge branch '2.4'
+      2014-04-22 12:11:06 | 63d82c4 | Merge branch '2.3' into 2.4
+      2014-04-22 12:11:23 | 5532495 | Merge branch '2.4'
+      2014-04-23 10:32:13 | 3977e16 | minor #10756 [2.3][Process] Add missing docblocks, remove variable declarations (romainneutron)
+      2014-04-23 10:33:25 | 4242306 | Merge branch '2.3' into 2.4
+      2014-04-23 18:08:54 | bb25c27 | Merge branch '2.4'
+      2014-04-24 17:28:08 | 8912ae3 | bug #10763 [Process] Disable TTY mode on Windows platform (romainneutron) (tag: v2.3.13)
+      2014-04-27 17:34:57 | 8721f14 | Merge branch '2.3' into 2.4 (tag: v2.4.4)
+      2014-04-28 09:15:04 | 8a3edac | Merge branch '2.4' (tag: v2.5.0-BETA2)
+      2014-05-22 17:46:01 | a7118cb | Merge branch '2.3' into 2.4 (tag: v2.4.6, tag: v2.4.5)
+      2014-05-22 17:47:45 | 2ecda6d | Merge branch '2.4'
+      2014-05-23 18:36:49 | e4b5fcd | updated version to 2.6
+      2014-06-12 14:00:57 | b6fd92d | Merge branch '2.3' into 2.4
+      2014-06-12 14:01:04 | 315cc14 | Merge branch '2.4' into 2.5
+      2014-06-12 14:01:10 | b5e1136 | Merge branch '2.5'
+      2014-06-16 13:30:19 | bbe4625 | Merge branch '2.5'
+      2014-07-01 10:40:32 | 3badfe3 | Merge branch '2.3' into 2.4
+      2014-07-01 10:40:40 | 77f01fe | Merge branch '2.4' into 2.5
+      2014-07-01 10:41:10 | 6ce30e8 | Merge branch '2.5'
+      2014-07-08 15:46:35 | 6a0e0a6 | Merge branch '2.3' into 2.4 (tag: v2.4.7)
+      2014-07-08 16:21:33 | d923d86 | Merge branch '2.4' into 2.5 (tag: v2.5.1)
+      2014-07-08 16:21:41 | b39c84a | Merge branch '2.5'
+      2014-07-09 13:04:55 | 331ff08 | Merge branch '2.3' into 2.4 (tag: v2.4.8)
+      2014-07-09 13:05:48 | 5e53efb | Merge branch '2.4' into 2.5 (tag: v2.5.2)
+      2014-07-09 13:06:26 | b3bb3b0 | Merge branch '2.5'
+      2014-07-16 17:02:06 | 2c49440 | bug #11381 [2.3] [Process] Use correct test for empty string in UnixPipes (whs, romainneutron)
+      2014-07-16 17:12:41 | 4a13260 | Merge branch '2.3' into 2.4
+      2014-07-16 17:13:02 | 389f090 | Merge branch '2.4' into 2.5
+      2014-07-16 17:48:12 | c34ccf1 | Merge branch '2.5'
+      2014-07-23 19:11:31 | 35c2a04 | bug #11120 [2.3][Process] Reduce I/O load on Windows platform (romainneutron)
+      2014-07-24 20:59:59 | 63856ca | Merge branch '2.3' into 2.4
+      2014-07-24 21:01:56 | 789e905 | Merge branch '2.4' into 2.5
+      2014-07-24 21:03:35 | 1ae465b | Merge branch '2.5'
+      2014-07-25 09:28:54 | 8da6d9d | bug #11425 Fix issue described in #11421 (Ben, ben-rosio)
+      2014-07-28 17:13:16 | a5314d2 | Merge branch '2.3' into 2.4
+      2014-07-28 17:20:46 | 06f4930 | Merge branch '2.4' into 2.5
+      2014-07-28 17:20:53 | 521c487 | Merge branch '2.5'
+      2014-07-29 22:09:11 | 75d2313 | fixed CS
+      2014-08-08 19:50:44 | 615307f | Merge branch '2.3' into 2.4
+      2014-08-08 19:50:54 | 56db723 | Merge branch '2.4' into 2.5
+      2014-08-31 07:18:18 | 4795c53 | Merge branch '2.3' into 2.4 (tag: v2.4.9)
+      2014-08-31 07:22:04 | 136cf0b | Merge branch '2.4' into 2.5 (tag: v2.5.4)
+      2014-08-31 07:28:38 | 8f1f4e4 | Merge branch '2.5'
+      2014-09-17 13:45:32 | dd529c5 | Merge branch '2.3' into 2.4
+      2014-09-17 13:50:16 | 3a8d0c8 | Merge branch '2.4' into 2.5
+      2014-09-17 13:54:14 | 24aaa0a | Merge branch '2.5'
+      2014-09-20 12:00:00 | 570959c | [Process] fixed some volatile tests
+      2014-09-21 11:12:05 | 599287b | minor #11966 [HttpFoundation] fixed some volatile tests (fabpot)
+      2014-09-21 22:53:12 | 445bbf4 | fixed CS
+      2014-09-22 12:51:05 | 6a2bd3d | Merge branch '2.3' into 2.4
+      2014-09-22 13:14:18 | da40c30 | Merge branch '2.4' into 2.5
+      2014-09-22 15:59:59 | f641d0a | Merge branch '2.5'
+      2014-09-23 09:24:59 | 2756ff2 | Merge branch '2.3' into 2.4 (tag: v2.4.10, origin/2.4)
+      2014-09-23 09:25:11 | 8a1ec96 | Merge branch '2.4' into 2.5 (tag: v2.5.5)
+      2014-09-23 09:25:18 | 1af7085 | Merge branch '2.5'
+      2014-10-01 09:50:18 | 9bbacbb | Merge branch '2.3' into 2.5 (tag: v2.5.6)
+      2014-10-01 09:53:11 | 2f0db54 | Merge branch '2.5'
+      2014-11-03 22:48:45 | ffe6e27 | fixed test that randomly fails (tag: v2.5.7)
+      2014-11-03 22:49:01 | 8cf0045 | Merge branch '2.5' (tag: v2.6.0-BETA1)
+      2014-11-10 21:00:54 | 5f5c84c | updated version to 2.7
+      2014-11-11 11:37:22 | 37721e1 | updated version to 3.0
+      2014-11-29 15:59:17 | 4be1a9b | minor #12696 [2.7][Process] Add deprecation message for component (romainneutron)
+      2014-12-02 23:15:53 | 62c77d8 | Merge branch '2.3' into 2.5 (tag: v2.5.8)
+      2014-12-02 23:19:20 | bf0c9bd | Merge branch '2.5' into 2.6 (tag: v2.6.1)
+      2014-12-02 23:19:50 | 2ec66cd | Merge branch '2.6' into 2.7
+      2014-12-02 23:20:06 | 1131f71 | Merge branch '2.7'
+      2014-12-04 08:12:39 | 14cfd91 | feature #12697 [3.0][Process] Remove deprecated methods (romainneutron)
+      2014-12-05 15:00:15 | ebb955e | Merge branch '2.5' into 2.6
+      2014-12-08 11:43:57 | ba88fc1 | Merge branch '2.6' into 2.7
+      2014-12-08 11:44:04 | dc2ad6e | Merge branch '2.7'
+      2014-12-11 21:57:00 | 825268c | minor #12529 [2.3] Remove possible call_user_func() (nicolas-grekas)
+      2014-12-11 21:59:58 | 473a537 | minor #12531 [2.5] Remove possible call_user_func() (nicolas-grekas)
+      2014-12-11 22:53:06 | dd18702 | Merge branch '2.3' into 2.5
+      2014-12-20 19:01:23 | bdfe0d9 | Merge branch '2.3' into 2.5
+      2014-12-20 19:02:27 | 9735d28 | Merge branch '2.5' into 2.6
+      2014-12-20 19:07:09 | 8e48bf5 | Merge branch '2.6' into 2.7
+      2014-12-20 19:07:50 | bb2cebb | Merge branch '2.7'
+      2014-12-22 19:29:52 | 20c81bd | Merge branch '2.3' into 2.5
+      2014-12-22 19:44:09 | 931dccf | Merge branch '2.5' into 2.6
+      2014-12-22 19:45:18 | 3131373 | Merge branch '2.6' into 2.7
+      2014-12-22 19:45:23 | 98fe6bf | Merge branch '2.7'
+      2014-12-30 12:03:46 | 4f04c51 | Merge branch '2.3' into 2.5
+      2014-12-30 12:04:52 | ffa3193 | Merge branch '2.5' into 2.6
+      2014-12-30 12:05:46 | c316c54 | Merge branch '2.6' into 2.7
+      2014-12-30 12:05:58 | a1dee98 | Merge branch '2.7'
+      2014-12-30 16:27:52 | e18b870 | minor #13147 [2.3] for consistency, use value of DIRECTORY_SEPARATOR to detect Windows (xabbuh)
+      2014-12-30 16:32:44 | f38897f | Merge branch '2.3' into 2.5
+      2014-12-30 16:34:16 | 4a0b25b | Merge branch '2.5' into 2.6
+      2014-12-30 16:34:24 | 248dcb3 | Merge branch '2.6' into 2.7
+      2014-12-30 16:35:28 | 8291610 | Merge branch '2.7'
+      2014-12-31 12:14:35 | 3016ae6 | Merge branch '2.5' into 2.6
+      2015-01-03 11:01:13 | 6d975f6 | Merge branch '2.3' into 2.5
+      2015-01-03 11:01:59 | dee20c9 | Merge branch '2.5' into 2.6
+      2015-01-03 11:02:46 | f6d1314 | Merge branch '2.6' into 2.7
+      2015-01-03 11:04:30 | 9b2b947 | Merge branch '2.7'
+      2015-01-05 23:58:03 | 3309098 | Merge branch '2.3' into 2.5 (tag: v2.5.9)
+      2015-01-05 23:59:13 | 03006c6 | Merge branch '2.5' into 2.6
+      2015-01-06 00:00:14 | d889cf9 | Merge branch '2.6' into 2.7
+      2015-01-06 13:39:25 | f3d37fa | Merge branch '2.7'
+      2015-01-07 18:58:19 | 0180c01 | Merge branch '2.6' into 2.7
+      2015-01-07 18:59:06 | bc28a57 | Merge branch '2.7'
+      2015-01-09 00:38:30 | eb512e3 | bumped min PHP version to 5.3.9
+      2015-01-25 07:37:39 | 7b6632c | Merge branch '2.3' into 2.5 (tag: v2.5.10)
+      2015-01-25 07:39:26 | ecfc23e | Merge branch '2.5' into 2.6 (tag: v2.6.4)
+      2015-01-25 07:39:35 | f3ab493 | Merge branch '2.6' into 2.7
+      2015-01-25 07:42:01 | aa3eb77 | Merge branch '2.7'
+      2015-02-04 17:30:31 | e4f028f | minor #13446 [Process] Make test AbstractProcessTest::testStartAfterATimeout useful again (ymc-dabe)
+      2015-02-05 09:31:40 | 1c94d7c | Merge branch '2.3' into 2.5
+      2015-02-05 09:36:51 | 8822a7e | Merge branch '2.5' into 2.6
+      2015-02-05 09:58:17 | 8a22534 | Merge branch '2.6' into 2.7
+      2015-02-05 09:59:50 | f8bd6d6 | Merge branch '2.7'
+      2015-02-05 11:31:48 | daaa39a | [FrameworkBundle] fixed tests
+      2015-02-05 11:35:03 | 8d07d6f | Merge branch '2.5' into 2.6
+      2015-02-05 11:35:11 | 2780319 | Merge branch '2.6' into 2.7
+      2015-02-05 11:35:18 | 5db8e24 | Merge branch '2.7'
+      2015-02-08 10:41:14 | 2321c42 | renamed composer.phar to composer to be consistent with the Symfony docs
+      2015-02-05 11:19:53 | c41159d | [Process] added a deprecation notice
+      2015-02-11 10:12:14 | c371bc1 | Merge branch '2.3' into 2.6
+      2015-02-11 10:17:51 | 73e9dfc | Merge branch '2.6' into 2.7
+      2015-02-11 15:46:36 | b2afcf6 | minor #13600 [Process] added a deprecation notice (fabpot)
+      2015-02-12 11:47:54 | 1ca6621 | Merge branch '2.7'
+      2015-02-24 14:37:24 | cbadff2 | minor #13772 [2.3] require-dev PHPUnit bridge (nicolas-grekas)
+      2015-03-12 17:31:07 | 39f1bb3 | Merge branch '2.6' into 2.7
+      2015-03-22 19:55:57 | b1966e1 | Merge branch '2.3' into 2.6
+      2015-03-22 19:57:18 | 3e89d4a | Merge branch '2.6' into 2.7
+      2015-03-23 11:18:05 | e684706 | Merge branch '2.6' into 2.7
+      2015-03-24 20:09:17 | 7617a96 | Merge branch '2.7'
+      2015-03-27 18:19:08 | db46cf1 | minor #13829 [Process] prefix should not be escaped (pyrech) (tag: v2.3.27)
+      2015-03-30 18:54:10 | a8bebae | Merge branch '2.3' into 2.6 (tag: v2.6.6)
+      2015-03-30 18:55:07 | 6028c82 | Merge branch '2.6' into 2.7
+      2015-03-30 18:59:03 | 18168da | Merge branch '2.7'
+      2015-04-10 10:19:44 | 599e01c | Merge branch '2.6' into 2.7
+      2015-04-10 10:23:38 | 2930a2b | removed 3.0 constraints from 2.7 composer files (tag: v2.7.0-BETA1)
+      2015-04-10 10:30:08 | b66d2e2 | Merge branch '2.8'
+      2015-04-10 10:31:54 | cde85b6 | bumped deps on 2.8 in all composer.json
+      2015-04-10 11:55:07 | 01e6612 | Revert "removed 3.0 constraints from 2.7 composer files"
+      2015-04-10 11:56:33 | 5c73c03 | updated version to 2.8
+      2015-04-27 15:43:05 | 0091cbd | Merge branch '2.3' into 2.6
+      2015-05-02 18:18:45 | 9f3c4ba | Merge branch '2.3' into 2.6 (tag: v2.6.7)
+      2015-05-02 18:21:08 | f393d21 | Merge branch '2.6' into 2.7 (tag: v2.7.0-BETA2)
+      2015-05-15 16:28:34 | 14ff569 | minor #14121 CS: Pre incrementation/decrementation should be used if possible (gharlan) (tag: v2.3.30, tag: v2.3.29)
+      2015-05-15 16:32:45 | 7856d78 | Merge branch '2.3' into 2.6 (tag: v2.6.9, tag: v2.6.8)
+      2015-05-15 16:33:16 | e0a82b5 | Merge branch '2.6' into 2.7 (tag: v2.7.0)
+      2015-05-15 17:11:12 | daf96f1 | Merge branch '2.7' into 2.8
+      2015-06-04 23:11:39 | 4ae84d3 | Merge branch '2.3' into 2.6
+      2015-06-04 23:11:48 | eb27f45 | Merge branch '2.6' into 2.7
+      2015-06-04 23:21:09 | 9f29614 | Merge branch '2.7' into 2.8
+      2015-06-04 23:30:47 | 5b92212 | Merge branch '2.8'
+      2015-06-11 20:27:52 | 1ac2963 | Merge branch '2.7' into 2.8
+      2015-08-24 09:53:33 | 93b14b6 | fixes CS
+      2015-08-24 10:18:02 | 47b6895 | Merge branch '2.7' into 2.8
+      2015-08-24 10:21:16 | 9fdec27 | Merge branch '2.8'
+      2015-09-27 13:08:38 | 5809cee | Merge branch '2.3' into 2.7
+      2015-09-27 13:09:46 | c505ee4 | Merge branch '2.7' into 2.8
+      2015-09-27 13:13:28 | 7fd193f | Merge branch '2.8'
+      2015-10-05 17:46:18 | 938db63 | feature #14908 Include working directory in ProcessFailedException (Rvanlaak)
+      2015-10-05 18:24:55 | 4dcd427 | Merge branch '2.8'
+      2015-10-06 09:09:31 | 27479cf | feature #16125 Replace is_callable checks with type hints (mpajunen, nicolas-grekas)
+      2015-10-17 09:51:28 | 74078db | [Process] tweaked README
+      2015-10-18 23:23:24 | 82fb0fc | Merge branch '2.7' into 2.8
+      2015-10-18 23:24:22 | 096c50f | Merge branch '2.8'
+      2015-10-30 23:10:21 | 4b557e0 | Merge branch '2.3' into 2.7
+      2015-10-30 23:15:42 | 7d645ea | Merge branch '2.7' into 2.8 (tag: v2.8.0-BETA1)
+      2015-10-31 02:35:59 | 3110e72 | Merge branch '2.8' (tag: v3.0.0-BETA1)
+      2015-11-19 19:11:24 | f629098 | Merge branch '2.3' into 2.7 (tag: v2.7.7)
+      2015-11-19 19:12:55 | 8ad2cbb | Merge branch '2.7' into 2.8
+      2015-11-23 13:41:47 | 185b16f | Merge branch '2.8'
+      2015-11-28 16:17:09 | 59e79a7 | minor #16707 [Process] Remove PHP_BINARY existence check (ogizanagi)
+      2015-11-30 15:32:50 | e6439aa | Merge branch '2.3' into 2.7
+      2015-11-30 15:35:10 | 1b988a8 | Merge branch '2.7' into 2.8 (tag: v2.8.0)
+      2015-11-30 15:36:17 | 01383ed | Merge branch '2.8' (tag: v3.0.0)
+      2015-12-01 00:39:17 | 6fae503 | updated version to 3.1
+      2016-01-03 18:32:00 | 06ff87d | Merge branch '2.3' into 2.7
+      2016-01-03 18:33:41 | fcf3726 | Merge branch '2.7' into 2.8
+      2016-01-03 18:35:16 | 6f380b5 | Merge branch '2.8' into 3.0
+      2016-01-03 18:35:40 | 3334c96 | Merge branch '3.0'
+      2016-01-20 09:43:36 | e38c659 | bug #17423 [2.3][Process] Use stream based storage to avoid memory issues (romainneutron)
+      2016-01-20 09:45:12 | dda2c2b | Merge branch '2.3' into 2.7
+      2016-01-20 15:09:07 | 14c65f1 | Merge branch '2.7' into 2.8
+      2016-01-20 15:18:23 | 95efcee | Merge branch '2.8' into 3.0
+      2016-01-20 15:19:44 | 825d337 | Merge branch '3.0'
+      2016-01-21 12:24:53 | 53579ca | fixed CS
+      2016-01-21 12:38:31 | 5bbe9d1 | Merge branch '2.8' into 3.0
+      2016-01-21 13:01:50 | 840aa10 | Merge branch '3.0'
+      2016-01-25 14:11:57 | 374a356 | feature #17427 [Process] Allow a callback whenever the output is disabled (romainneutron)
+      2016-03-04 10:52:28 | 6119bee | Merge branch '2.3' into 2.7
+      2016-03-04 10:54:35 | 0e1b886 | Merge branch '2.7' into 2.8
+      2016-03-04 10:55:57 | 36c9f90 | Merge branch '2.8' into 3.0
+      2016-03-04 10:56:56 | 8168534 | Merge branch '3.0'
+      2016-03-06 13:17:13 | 521e93b | bug #18015 [2.7][Process] Fix memory issue when using large input streams (romainneutron)
+      2016-03-30 13:21:35 | 03bc557 | Merge branch '2.3' into 2.7
+      2016-03-30 13:37:34 | 6b955af | Merge branch '2.7' into 2.8
+      2016-03-30 13:41:14 | e6f1f98 | Merge branch '2.8' into 3.0 (tag: v3.0.4)
+      2016-03-30 13:41:47 | f1bbf61 | Merge branch '3.0'
+      2016-04-02 11:44:52 | 1852e31 | feature #18386 [Process] Add InputStream to seamlessly feed running processes (nicolas-grekas)
+      2016-04-14 18:22:22 | 1276bd9 | Merge branch '2.7' into 2.8 (tag: v2.8.6, tag: v2.8.5)
+      2016-04-14 18:30:28 | 53f9407 | Merge branch '2.8' into 3.0 (tag: v3.0.6, tag: v3.0.5)
+      2016-05-13 21:13:23 | ecc0bf5 | updated version to 3.2
+      2016-06-20 19:47:20 | cf94780 | fixed CS
+      2016-06-21 08:36:02 | b3f6385 | Merge branch '2.7' into 2.8
+      2016-06-21 08:48:46 | fe34345 | Merge branch '2.8' into 3.0
+      2016-06-21 08:59:09 | 4b73436 | Merge branch '3.0' into 3.1
+      2016-06-21 09:41:01 | f344b87 | Merge branch '3.1'
+      2016-06-28 08:50:50 | 6137bd1 | removed dots at the end of @param and @return (tag: v2.7.15)
+      2016-06-28 19:24:07 | d89f304 | Merge branch '2.7' into 2.8
+      2016-06-28 19:26:27 | 5dbe4e1 | Merge branch '2.8' into 3.0
+      2016-06-28 19:26:56 | 5ccbd73 | Merge branch '3.0' into 3.1
+      2016-06-28 19:31:08 | c5c4e30 | Merge branch '3.1'
+      2016-06-29 08:29:29 | 89f33c1 | Merge branch '2.7' into 2.8 (tag: v2.8.8)
+      2016-06-29 08:40:00 | d7cde1f | Merge branch '2.8' into 3.0 (tag: v3.0.8)
+      2016-06-29 08:41:56 | 77a65a6 | Merge branch '3.0' into 3.1
+      2016-06-29 08:42:25 | 5c11a1a | fixed CS (tag: v3.1.2)
+      2016-06-29 08:43:10 | cdb8db3 | Merge branch '3.1'
+      2016-08-16 17:56:08 | 162d37e | Merge branch '2.7' into 2.8 (tag: v2.8.10)
+      2016-08-16 17:58:24 | e64e930 | Merge branch '2.8' into 3.1 (tag: v3.1.4)
+      2016-09-19 07:41:39 | 4151821 | fixed a test that do not pass onMac
+      2016-09-29 17:03:54 | 024de37 | Merge branch '2.7' into 2.8 (tag: v2.8.14, tag: v2.8.13, tag: v2.8.12)
+      2016-09-29 17:13:09 | 66de154 | Merge branch '2.8' into 3.1 (tag: v3.1.7, tag: v3.1.6, tag: v3.1.5)
+      2016-10-01 17:21:27 | fbaacdf | Merge branch '3.1' (tag: v3.2.0-RC1, tag: v3.2.0-BETA1)
+      2016-11-19 23:35:20 | bb5223b | updated version to 3.3
+      2016-11-24 03:43:03 | 1a1bd05 | Merge branch '2.7' into 2.8 (tag: v2.8.15)
+      2016-11-24 03:46:24 | 6bb2bd3 | Merge branch '2.8' into 3.1
+      2016-11-24 03:46:43 | 2147a6b | Merge branch '3.1' into 3.2
+      2016-11-24 03:46:49 | 66bac72 | Merge branch '3.2'
+      2016-11-24 04:08:05 | d23427a | bug #20600 [Process] Fix process continuing after reached timeout using getIterator() (chalasr) (tag: v3.1.8)
+      2016-12-19 12:02:29 | d922e2d | fixed obsolete getMock() usage
+      2016-12-19 18:48:05 | 0636dfb | fixed obsolete getMock() usage
+      2016-12-19 18:53:49 | c38dace | Merge branch '2.8' into 3.1
+      2016-12-19 19:07:36 | 80bd3f0 | Merge branch '3.1' into 3.2
+      2016-12-19 19:13:57 | 8bfc25c | Merge branch '3.2'
+      2016-12-19 19:17:38 | 5e180b2 | fixed tests
+      2016-12-19 19:18:40 | 78edd4d | fixed tests
+      2016-12-19 19:19:24 | 0feac18 | Merge branch '3.1' into 3.2
+      2016-12-19 19:19:32 | 42e663e | Merge branch '3.2'
+      2016-12-26 10:50:27 | 8e3ead9 | fixed @return when returning this or static
+      2016-12-27 13:39:57 | b8824a3 | Merge branch '2.7' into 2.8
+      2016-12-27 13:43:25 | 1b4bcf8 | Merge branch '2.8' into 3.1
+      2016-12-27 13:44:30 | cb63d9e | Merge branch '3.1' into 3.2
+      2016-12-27 13:45:09 | d060993 | Merge branch '3.2'
+      2017-01-02 23:30:00 | 69b111c | updated LICENSE year (tag: v2.7.23)
+      2017-01-02 23:30:24 | ebb3c2a | Merge branch '2.7' into 2.8 (tag: v2.8.16)
+      2017-01-02 23:31:54 | b525066 | Merge branch '2.8' into 3.1 (tag: v3.1.9)
+      2017-01-02 23:32:22 | 350e810 | Merge branch '3.1' into 3.2 (tag: v3.2.2)
+      2017-01-02 23:33:09 | 6c687d5 | Merge branch '3.2'
+      2017-01-20 18:16:44 | e0c4c9a | fixed CS
+      2017-01-21 19:33:48 | c69ba42 | fixed typo
+      2017-01-21 19:37:26 | 538997b | Revert "fixed typo"
+      2017-01-21 19:40:50 | 699fe81 | Merge branch '2.7' into 2.8
+      2017-01-21 20:01:39 | 1008ec3 | Merge branch '2.8' into 3.1
+      2017-01-21 20:06:35 | a18c7f3 | Merge branch '3.1' into 3.2
+      2017-01-21 20:10:26 | 86f6ed5 | Merge branch '3.2'
+      2017-01-21 20:13:55 | 2605753 | fixed CS (tag: v3.1.10, origin/3.1)
+      2017-01-21 20:14:11 | 759f1df | Merge branch '3.1' into 3.2
+      2017-01-21 20:19:16 | 31e5a30 | Merge branch '3.2'
+      2017-02-08 18:45:40 | 37d0052 | feature #21474 [Process] Accept command line arrays and per-run env vars, fixing signaling and escaping (nicolas-grekas)
+      2017-02-16 17:06:24 | 9773908 | Merge branch '2.7' into 2.8
+      2017-02-16 17:07:22 | 0ab87c1 | Merge branch '2.8' into 3.2 (tag: v3.2.4)
+      2017-02-16 17:15:30 | 0093acd | Merge branch '3.2'
+      2017-03-27 21:09:43 | 3b6c343 | Merge branch '3.2'
+      2017-04-12 17:07:15 | aff35fb | Merge branch '2.7' into 2.8 (tag: v2.8.20)
+      2017-04-12 17:13:17 | 999c2cf | Merge branch '2.8' into 3.2 (tag: v3.2.8)
+      2017-04-12 17:14:56 | 34b680b | Merge branch '3.2'
+      2017-05-07 19:11:44 | d54232f | fixed CS (tag: v2.8.22, tag: v2.8.21)
+      2017-05-08 04:51:21 | 3677471 | Merge branch '2.8' into 3.2 (tag: v3.2.9)
+      2017-05-17 19:21:40 | c52d94d | updated version to 3.4
+      2017-05-17 19:33:00 | 387e229 | updated version to 4.0
+      2017-05-17 21:41:56 | adfc650 | bumped minimum version to PHP 7.1
+      2017-05-18 20:40:51 | eab2bb8 | removed HHVM support
+      2017-06-12 21:12:26 | 8def77d | Merge branch '3.4'
+      2017-07-03 11:04:30 | 57e52a0 | Merge branch '2.7' into 2.8 (tag: v2.8.27, tag: v2.8.26, tag: v2.8.25, tag: v2.8.24, tag: v2.8.23)
+      2017-07-03 11:06:20 | b39d805 | Merge branch '2.8' into 3.2 (tag: v3.2.14, tag: v3.2.13, tag: v3.2.12, tag: v3.2.11, tag: v3.2.10, origin/3.2)
+      2017-07-03 11:12:02 | 5ab8949 | Merge branch '3.2' into 3.3 (tag: v3.3.4, tag: v3.3.3)
+      2017-07-03 11:12:16 | 23d5ac2 | Merge branch '3.3' into 3.4
+      2017-07-03 11:14:23 | 3bce28b | Merge branch '3.4'
+      2017-09-11 23:39:16 | 9a1349a | Merge branch '2.7' into 2.8
+      2017-09-11 23:43:11 | d60ff0a | Merge branch '2.8' into 3.3
+      2017-09-11 23:45:17 | 20d03aa | Merge branch '3.3' into 3.4
+      2017-09-11 23:45:27 | a5e541b | Merge branch '3.4'
+      2017-09-12 00:23:01 | e94deb3 | fixed CS
+      2017-09-12 00:23:16 | 19d5369 | Merge branch '3.3' into 3.4
+      2017-09-12 00:36:26 | 47c9794 | Merge branch '3.4'
+      2017-09-30 17:00:25 | 601b7d8 | minor #24342 removed useless PHPDoc (OskarStark) (tag: v2.7.35)
+      2017-10-06 01:24:36 | 5126fc5 | feature #23708 Added deprecation to cwd not existing Fixes #18249 (alexbowers) (tag: v3.4.0-BETA1)
+      2017-10-20 21:48:32 | 693f102 | Merge branch '3.3' into 3.4
+      2017-11-21 20:31:29 | 937744f | updated version to 4.1
+      2017-12-12 01:06:16 | 305be8b | Merge branch '3.3' into 3.4
+      2017-12-14 22:40:10 | bb3ef65 | fixed tests (tag: v3.4.2)
+      2017-12-14 22:48:22 | 18d1953 | Merge branch '3.4' into 4.0 (tag: v4.0.2)
+      2017-12-14 22:50:39 | e455447 | Merge branch '4.0'
+      2017-12-31 07:16:51 | 621337c | Merge branch '2.7' into 2.8
+      2017-12-31 08:33:21 | a977aff | fixed some deprecation messages
+      2017-12-31 09:07:31 | c92a369 | Merge branch '3.3' into 3.4
+      2017-12-31 09:25:36 | c600f78 | fixed some deprecation messages
+      2018-01-03 10:23:28 | f4f4f13 | fixed years in copyright (tag: v2.7.40)
+      2018-01-03 10:36:31 | ea3226d | Merge branch '2.7' into 2.8 (tag: v2.8.33)
+      2018-01-03 10:37:11 | 0350bf4 | Merge branch '2.8' into 3.3 (tag: v3.3.15)
+      2018-01-03 10:37:34 | ff69f11 | Merge branch '3.3' into 3.4 (tag: v3.4.3)
+      2018-01-03 10:38:00 | 2145b3e | Merge branch '3.4' into 4.0 (tag: v4.0.3)
+      2018-01-03 10:38:11 | 437ffa0 | Merge branch '4.0'
+      2018-01-23 09:39:39 | ba61437 | feature #25775 Introduce signaled process specific exception class (Soullivaneuh)
+      2018-01-29 11:54:45 | 905efe9 | Merge branch '2.7' into 2.8 (tag: v2.8.34)
+      2018-01-29 12:02:23 | 104b5ac | Merge branch '2.8' into 3.3 (tag: v3.3.18, tag: v3.3.17, tag: v3.3.16, origin/3.3)
+      2018-01-29 12:03:43 | 09a5172 | Merge branch '3.3' into 3.4 (tag: v3.4.4)
+      2018-01-29 12:06:29 | e171200 | Merge branch '3.4' into 4.0 (tag: v4.0.4)
+      2018-01-29 12:06:44 | 4a53b72 | Merge branch '4.0'
+      2018-02-19 15:18:43 | 6ed0850 | removed version in @final @internal for version < 4.0 (tag: v4.0.6, tag: v4.0.5)
+      2018-04-03 08:20:27 | ee2c914 | Merge branch '2.7' into 2.8 (tag: v2.8.39, tag: v2.8.38)
+      2018-04-03 08:22:50 | 4b7d64e | Merge branch '2.8' into 3.4 (tag: v3.4.9, tag: v3.4.8, tag: v3.4.7)
+      2018-04-03 08:24:00 | d7dc1ee | Merge branch '3.4' into 4.0 (tag: v4.0.9, tag: v4.0.8, tag: v4.0.7)
+      2018-04-03 08:25:17 | 1ed51bf | Merge branch '4.0' (tag: v4.1.0-BETA1)
+      2018-05-07 17:51:25 | d103c50 | updated version to 4.2
+      2018-05-27 10:40:52 | 542d88b | bug #27303 [Process] Consider "executable" suffixes first on Windows (sanmai) (tag: v2.8.43, tag: v2.8.42)
+      2018-05-30 07:24:30 | acc5a37 | Merge branch '2.8' into 3.4 (tag: v3.4.12)
+      2018-09-04 11:22:54 | f079cb6 | feature #28303 [Process] Add relative path support for PHP_BINARY env var of PhpExecutableFinder (maidmaid)
+      2018-09-04 19:55:13 | 04d4cc8 | minor #28307 Mark ExceptionInterfaces throwable #2 (ostrolucky)
+      2018-09-08 09:40:26 | ab568b6 | removed usage of backticks in exception messages
+      2018-11-26 19:19:01 | 1a01d29 | updated version to 4.3
+      2019-01-16 12:39:14 | 4b32d21 | switched array() to []
+      2019-01-16 16:03:22 | 009f8dd | fixed short array CS in comments (tag: v3.4.24, tag: v3.4.23, tag: v3.4.22)
+      2019-01-16 21:21:11 | 13b9e99 | Merge branch '3.4' into 4.1
+      2019-01-16 21:24:45 | 20123ec | fixed CS
+      2019-01-16 21:56:49 | 72d838a | fixed CS (tag: v4.1.12, tag: v4.1.11, origin/4.1)
+      2019-01-16 23:31:39 | 58b6521 | Merge branch '4.1' into 4.2
+      2019-01-16 23:35:37 | 5a7f819 | fixed CS
+      2019-01-16 23:41:24 | 3a43a25 | fixed CS
+      2019-01-17 00:53:39 | e9f2086 | Merge branch '4.2' into short-array-master
+      2019-04-08 19:15:54 | a9c4dfb | fixed CS (tag: v3.4.27, tag: v3.4.26, tag: v3.4.25)
+      2019-04-10 19:20:36 | 8cf39fb | Merge branch '3.4' into 4.2 (tag: v4.2.8, tag: v4.2.7, tag: v4.2.6)
+      2019-04-10 22:42:49 | 7ae5878 | Merge branch '4.2' (tag: v4.3.0-BETA2, tag: v4.3.0-BETA1)
+      2019-05-09 10:23:25 | c43b190 | updated version to 4.4
+      2019-05-28 15:18:42 | b009286 | updated version to 5.0
+      2019-08-18 11:22:22 | 050b642 | feature #33098 added `Process::getLastOutputTime()` method (connorhu)
+      2019-08-18 11:23:14 | c61ffc1 | fixed CS
+      2019-09-16 11:16:50 | 646f7ea | Merge branch '4.4'
+      2019-11-17 21:31:35 | 9dd6e2e | updated version to 5.1
+      2020-02-04 11:03:00 | b03b02d | Fix CS (tag: v3.4.38)
+      2020-02-04 12:01:01 | aa500a3 | Merge branch '3.4' into 4.4
+      2020-02-04 12:41:09 | 24fc16e | Merge branch '4.4' into 5.0
+      2020-02-04 12:50:54 | 029fbac | Merge branch '5.0'
+      2020-03-15 12:01:00 | 3641a93 | Add missing dots at the end of exception messages
+      2020-03-15 13:05:03 | 16f6867 | Merge branch '3.4' into 4.4
+      2020-03-15 17:33:06 | e1cf24d | Merge branch '4.4' into 5.0
+      2020-03-15 17:51:35 | 5a64c37 | Merge branch '5.0'
+      2020-03-16 10:32:23 | 7ca8560 | Fix quotes in exception messages
+      2020-03-16 11:56:54 | 52075fa | Merge branch '3.4' into 4.4
+      2020-03-16 15:10:54 | 9d42cfe | Merge branch '4.4' into 5.0
+      2020-03-16 16:12:54 | e295833 | Merge branch '5.0'
+      2020-03-16 18:39:23 | 04c6bb1 | Fix more quotes in exception messages
+      2020-03-16 19:04:53 | 6c53bfb | Merge branch '3.4' into 4.4
+      2020-03-16 19:38:48 | 37ddf98 | Merge branch '4.4' into 5.0
+      2020-03-27 19:56:45 | c5ca4a0 | Merge branch '4.4' into 5.0 (tag: v5.0.7)
+      2020-04-12 17:22:30 | f5104c9 | Tweak the code to avoid fabbot false positives (tag: v3.4.40)
+      2020-04-12 17:39:55 | c30583b | Merge branch '3.4' into 4.4
+      2020-04-12 17:40:17 | 464a12e | Merge branch '4.4' into 5.0
+      2020-04-12 17:42:09 | cb8422a | Merge branch '5.0'
+      2020-04-12 19:10:21 | 8cc1c1b | Tweak the code to avoid fabbot false positives
+      2020-04-12 19:45:47 | 313216b | Merge branch '4.4' into 5.0
+      2020-04-12 19:48:26 | b33a61f | Merge branch '5.0'
+      2020-04-12 19:56:09 | c8f0484 | Fix tests
+      2020-04-12 19:56:42 | 920cc7a | Merge branch '4.4' into 5.0
+      2020-04-12 19:56:52 | 0549600 | Merge branch '5.0'
+      2020-05-16 15:09:30 | 509ba16 | updated version to 5.2
+      2020-09-08 16:25:06 | 6beca1c | feature #37519 [Process] allow setting options esp. "create_new_console" to detach a subprocess (andrei0x309) (tag: v5.2.0-BETA1)
+      2021-01-01 12:24:35 | 5f18896 | Bump license year
+      2021-01-01 12:25:51 | 43aef43 | Merge branch '4.4' into 5.1
+      2021-01-01 12:26:45 | 4acd352 | Merge branch '5.1' into 5.2
+      2021-01-10 11:16:05 | e208720 | Improve composer.json descriptions
+      2021-01-10 19:29:19 | cc3d678 | Merge branch '4.4' into 5.1
+      2021-01-10 19:30:10 | 86970bc | Merge branch '5.1' into 5.2
+      2021-01-11 11:47:58 | 298c752 | Use ::class keyword when possible
+      2021-01-11 12:50:50 | 5a86eff | Merge branch '4.4' into 5.1
+      2021-01-11 12:51:46 | 0ff3bf7 | Merge branch '5.1' into 5.2
+      2021-11-04 11:49:31 | eebc070 | Fix CS
+      2022-01-02 12:41:36 | f0521ab | Bump license year
+      2022-01-02 12:51:59 | 58e9516 | Merge branch '4.4' into 5.3
+      2022-01-02 12:53:40 | 7e21efd | Merge branch '5.3' into 5.4
+      2022-01-02 12:55:41 | ba1b4e7 | Merge branch '5.4' into 6.0
+      2022-01-02 12:56:25 | 7a306d5 | Merge branch '6.0' into 6.1
+      2022-04-08 08:07:18 | 597f3ff | Merge branch '4.4' into 5.4 (tag: v5.4.8)
+      2023-01-01 11:32:19 | c5ba874 | Bump license year to 2023 (tag: v5.4.19)
+      2023-01-01 11:36:10 | 2114fd6 | Merge branch '5.4' into 6.0 (tag: v6.0.19, origin/6.0)
+      2023-01-01 11:36:55 | 62d915f | Merge branch '6.0' into 6.1 (tag: v6.1.11, origin/6.1)
+      2023-01-01 11:38:09 | 9ead139 | Merge branch '6.1' into 6.2 (tag: v6.2.5)
+      2023-01-24 17:02:24 | f7f1cf1 | Update license years (last time)
+      2023-02-02 10:44:01 | 8d9ff73 | Merge branch '5.4' into 6.2
+      2023-02-02 10:48:03 | 5e6dd40 | Merge branch '6.2' into 6.3
+
+Nicolas Grekas (610):
+      2014-02-04 17:48:52 | 987e3e7 | fix ProcessPipes
+      2014-11-21 11:49:35 | 2a51230 | [2.3] Remove possible call_user_func()
+      2014-11-21 12:14:57 | cfeb58c | [2.5] Remove possible call_user_func()
+      2014-12-12 19:21:40 | 10a896e | Merge branch '2.5' into 2.6
+      2014-12-12 19:23:01 | e48a06a | Merge branch '2.6' into 2.7
+      2014-12-12 19:24:25 | 3adff82 | Merge branch '2.7'
+      2014-11-20 00:23:28 | 62dc266 | [3.0] Update required PHP to 5.5.9
+      2015-01-13 17:17:46 | 8fdfab6 | [PhpUnitBridge] new bridge for testing with PHPUnit
+      2015-02-21 16:23:59 | e4fc3e9 | Merge branch '2.7'
+      2015-02-24 11:06:17 | c00f837 | [2.3] require-dev PHPUnit bridge
+      2015-02-24 14:52:21 | f575bee | Merge branch '2.3' into 2.6
+      2015-02-24 15:09:34 | 068af93 | Merge branch '2.6' into 2.7
+      2015-02-24 15:15:02 | a763f59 | Merge branch '2.7'
+      2015-03-12 13:28:44 | 4d717f3 | Merge branch '2.3' into 2.6 (tag: v2.6.5)
+      2015-03-13 13:36:02 | 740a2e2 | Merge branch '2.7'
+      2015-03-13 20:49:40 | 661d4e5 | [2.7] add @group legacy
+      2015-03-13 21:00:11 | 90f73af | Merge branch 'legacy27' into legacy-master
+      2015-04-07 14:59:04 | 79b0d1e | [Process] Fix volatile test
+      2015-04-24 10:02:53 | 8382bc5 | Merge branch '2.7' into 2.8
+      2015-04-24 10:09:27 | e14f07f | Merge branch '2.8'
+      2015-05-12 18:16:46 | a87e7b3 | Merge branch '2.7' into 2.8
+      2015-05-12 18:48:43 | fd1d003 | Merge branch '2.8'
+      2015-05-15 17:13:55 | 0e0391f | Merge branch '2.7' into 2.8
+      2015-05-15 17:16:35 | d9df194 | Merge branch '2.8'
+      2015-06-18 15:58:06 | 84965c4 | Merge branch '2.3' into 2.6
+      2015-06-18 16:03:50 | 50806e9 | Merge branch '2.6' into 2.7
+      2015-06-18 19:14:27 | dfd1a7f | Merge branch '2.7' into 2.8
+      2015-06-18 19:25:07 | b065ab8 | Merge branch '2.8'
+      2015-06-18 21:45:22 | 5c7f4ad | [PhpUnitBridge] Enforce @-silencing of deprecation notices according to new policy
+      2015-06-19 18:09:14 | b064410 | Merge branch '2.7' into 2.8
+      2015-06-30 09:51:58 | d6c06b0 | Towards 100% HHVM compat
+      2015-06-30 19:05:31 | e797e51 | Minor fixes (tag: v2.3.31)
+      2015-06-30 19:10:16 | 57f1e88 | Merge branch '2.3' into 2.6 (tag: v2.6.13, tag: v2.6.12, tag: v2.6.11, tag: v2.6.10, origin/2.6)
+      2015-07-01 14:25:50 | 48aeb0e | Merge branch '2.6' into 2.7 (tag: v2.7.3, tag: v2.7.2)
+      2015-07-01 23:40:29 | c58fa0e | Merge branch '2.8'
+      2015-08-20 09:18:51 | 55aec78 | Windows and Intl fixes (tag: v2.3.32)
+      2015-08-26 13:48:03 | 7802171 | Merge branch '2.3' into 2.7
+      2015-08-26 14:41:45 | 336a2b1 | [Process] Disable failing tests on Windows
+      2015-08-26 21:16:18 | f7b3f73 | Various fixes esp. on Windows (tag: v2.7.4)
+      2015-08-27 09:53:13 | fc18e37 | Merge branch '2.7' into 2.8
+      2015-08-27 10:55:57 | 0f0810b | Merge branch '2.8'
+      2015-09-19 22:59:23 | b27c8e3 | Merge branch '2.3' into 2.7 (tag: v2.7.5)
+      2015-09-19 22:59:50 | 027198e | Merge branch '2.7' into 2.8
+      2015-09-19 23:03:10 | 6969683 | Merge branch '2.8'
+      2015-10-05 19:52:37 | 606e8f7 | Add more callable type hints
+      2015-10-05 20:32:31 | 9023a0b | Fix docblocks about callables
+      2015-10-04 16:03:24 | fb9e2fd | [3.0] Various deprecations cleanups
+      2015-10-06 11:31:51 | 1ddd1fc | Merge branch '2.3' into 2.7
+      2015-10-06 20:12:59 | 69d7a41 | Merge branch '2.7' into 2.8
+      2015-10-09 19:17:11 | d8d70b0 | [ci] Enable collecting and replaying skipped tests
+      2015-10-08 12:41:54 | 68602ce | [tests] Use @requires annotation when possible
+      2015-10-10 12:14:14 | a46f614 | minor #16190 [ci] Enable collecting and replaying skipped tests (nicolas-grekas)
+      2015-10-10 12:26:25 | 9ec9830 | Merge branch '2.3' into 2.7
+      2015-10-10 12:36:22 | 47a7a31 | Merge branch '2.7' into 2.8
+      2015-10-10 13:22:50 | 195d232 | Merge branch '2.8'
+      2015-10-10 19:01:13 | f6ded97 | [Process] Don't use @requires on abstract class
+      2015-10-10 19:53:09 | 918be4e | Merge branch '2.3' into 2.7
+      2015-10-10 21:55:46 | c14f1c4 | Merge branch '2.7' into 2.8
+      2015-10-11 11:09:32 | 4e1daf5 | [PhpUnit] Auto-register SymfonyTestsListener
+      2015-10-11 12:14:55 | 35887fc | Merge branch '2.8'
+      2015-10-11 11:09:32 | 979d974 | [ci] SymfonyTestsListener is now auto-registered
+      2015-10-11 12:38:55 | 7440f96 | Merge branch '2.3' into 2.7
+      2015-10-19 17:17:09 | 7512a90 | [Process] Inherit env vars by default in PhpProcess (tag: v2.3.34)
+      2015-10-23 17:47:27 | 4a959dd | Merge branch '2.3' into 2.7 (tag: v2.7.6)
+      2015-10-23 17:52:08 | 7881472 | Merge branch '2.7' into 2.8
+      2015-10-23 18:08:51 | c6a393e | Merge branch '2.8'
+      2015-11-10 13:50:50 | ad55cf3 | bug #16510 [2.3][Process] fix Proccess run with pts enabled (ewgRa)
+      2015-11-18 11:19:46 | 125bef5 | Add missing exclusions from phpunit.xml.dist
+      2015-11-18 16:41:01 | 71f0200 | Merge branch '2.3' into 2.7
+      2015-11-18 16:45:00 | 1b9d41e | Merge branch '2.7' into 2.8
+      2015-11-18 16:48:51 | d3ad504 | Merge branch '2.8'
+      2015-11-17 19:45:51 | b268a43 | [Process] Fix PhpProcess with phpdbg runtime
+      2015-11-18 19:27:55 | 99d1aae | Merge branch '2.3' into 2.7
+      2015-11-18 19:56:24 | cabf2f9 | Merge branch '2.7' into 2.8
+      2015-11-18 19:57:58 | 67c12c8 | Merge branch '2.8'
+      2015-11-19 15:33:23 | 4d0eaad | [Process] Fix trailing space in PHP binary finder (tag: v2.3.35)
+      2015-11-20 20:45:52 | 5b9c74e | Merge branch '2.8'
+      2015-11-27 11:21:43 | 22e2cf7 | [Process] Don't catch RuntimeException when it complicates tests debugging
+      2015-11-28 12:05:32 | dec440b | Merge branch '2.3' into 2.7
+      2015-11-28 12:05:52 | 53479a0 | Merge branch '2.7' into 2.8
+      2015-11-28 12:12:47 | 55e36af | Merge branch '2.8'
+      2015-11-30 11:52:07 | 1fb0dd1 | [Process] Fix signaling/stopping logic on Windows
+      2015-12-02 19:43:18 | 0b5a0fd | [Process] Fix stopping a process on Windows
+      2015-12-07 12:45:14 | 1621c2e | [Process] Always call proc_close
+      2015-12-08 19:23:26 | 03c103b | [Process] Enhance compatiblity with --enable-sigchild
+      2015-12-10 19:58:22 | 322af23 | Merge branch '2.3' into 2.7
+      2015-12-10 20:11:25 | d6a2135 | Merge branch '2.7' into 2.8
+      2015-12-10 20:31:09 | 9926fbb | Merge branch '2.8' into 3.0
+      2015-12-10 20:31:22 | fada1b8 | Merge branch '3.0'
+      2015-12-18 23:16:23 | 84f0570 | [Process] More robustness and deterministic tests
+      2015-12-23 09:54:35 | 07078bb | Merge branch '2.3' into 2.7
+      2015-12-18 23:16:23 | 919c76a | [Process] Make tests more deterministic
+      2015-12-23 10:35:50 | 75b4cb1 | [Process] Fix transient test on Windows
+      2015-12-23 10:54:09 | bb312d4 | Merge branch '2.3' into 2.7
+      2015-12-23 10:54:37 | 48d0c29 | minor #17070 [Process] Make tests more deterministic (nicolas-grekas)
+      2015-12-23 10:56:26 | c507f99 | Merge branch '2.7' into 2.8
+      2015-12-23 11:00:11 | 08e0ce3 | Merge branch '2.8' into 3.0
+      2015-12-23 11:01:03 | fe4ad33 | Merge branch '3.0'
+      2015-12-23 12:10:11 | f35ba67 | [Process] Fix the fix for --enable-sigchild php (tag: v2.3.36)
+      2015-12-23 14:03:39 | a3fb8f4 | Merge branch '2.3' into 2.7 (tag: v2.7.8)
+      2015-12-23 14:03:46 | 62c2544 | Merge branch '2.7' into 2.8 (tag: v2.8.1)
+      2015-12-23 14:04:02 | f4794f1 | Merge branch '2.8' into 3.0 (tag: v3.0.1)
+      2015-12-23 14:04:13 | a631eed | Merge branch '3.0'
+      2015-12-28 16:03:05 | dcaf565 | minor #17086 CS: use nowdoc instead of heredoc (gharlan)
+      2015-12-28 16:11:03 | d257e3e | Merge branch '2.3' into 2.7
+      2015-12-28 16:12:56 | 126dde8 | Merge branch '2.7' into 2.8
+      2015-12-28 16:14:56 | 9eab6c9 | Merge branch '2.8' into 3.0
+      2015-12-28 16:15:29 | 66e34cf | Merge branch '3.0'
+      2015-12-30 11:46:06 | 03385f1 | [Process] Fix potential race condition leading to transient tests
+      2015-12-30 11:37:09 | 151e119 | [Process] Fix a transient test
+      2015-12-30 13:27:24 | dd71d2f | Merge branch '2.3' into 2.7
+      2015-12-30 13:33:57 | c404fce | Merge branch '2.7' into 2.8
+      2015-12-30 13:41:35 | 9b2aa21 | Merge branch '2.8' into 3.0
+      2015-12-30 13:41:51 | e9f0d32 | Merge branch '3.0'
+      2015-12-30 19:55:43 | dca88cd | [Process] Fix running tests on HHVM>=3.8
+      2015-12-30 21:22:28 | e80e187 | Merge branch '2.3' into 2.7
+      2015-12-30 21:23:12 | 75b35e0 | Merge branch '2.7' into 2.8
+      2015-12-30 21:45:14 | cb9cbc3 | Merge branch '2.8' into 3.0
+      2015-12-30 21:48:02 | 95fd1e5 | Merge branch '3.0'
+      2015-12-31 13:16:56 | 78f7393 | [Process] Clean tested process on tear down
+      2015-12-31 13:59:19 | 40cb0bd | Merge branch '2.3' into 2.7
+      2015-12-31 13:59:32 | 9c367f0 | Merge branch '2.7' into 2.8
+      2015-12-31 13:59:47 | 0f04a02 | Merge branch '2.8' into 3.0
+      2015-12-31 13:59:57 | f224de7 | Merge branch '3.0'
+      2016-01-06 11:44:17 | db7fe6f | [Process] Fix potential race condition (tag: v2.3.37)
+      2016-01-06 12:57:37 | 0570b9c | Merge branch '2.3' into 2.7 (tag: v2.7.9)
+      2016-01-06 12:59:23 | 6f1979c | Merge branch '2.7' into 2.8
+      2016-01-06 13:01:25 | 9c6ca53 | Merge branch '2.8' into 3.0
+      2016-01-06 13:01:46 | 1cba8f0 | Merge branch '3.0'
+      2016-02-01 16:00:12 | a06c0e7 | [Process] Fix transient tests for incremental outputs (tag: v2.3.38)
+      2016-02-02 16:32:58 | faa8943 | Merge branch '2.3' into 2.7 (tag: v2.7.10)
+      2016-02-02 16:33:15 | 7dedd5b | Merge branch '2.7' into 2.8 (tag: v2.8.3)
+      2016-02-02 16:44:19 | dfecef4 | Merge branch '2.8' into 3.0 (tag: v3.0.3, tag: v3.0.2)
+      2016-02-04 15:57:09 | 650a913 | Merge branch '3.0'
+      2016-03-07 17:04:32 | 1a44667 | Merge branch '2.7' into 2.8
+      2016-03-08 21:54:08 | cba2f70 | [Process] Fix pipes handling
+      2016-03-10 13:11:44 | 1364c6f | Merge branch '2.7' into 2.8
+      2016-03-10 13:34:12 | 15f4db2 | Merge branch '2.8' into 3.0
+      2016-03-10 14:16:56 | 101c171 | Merge branch '3.0'
+      2016-03-13 13:06:10 | 9956fa4 | [Process] Wait a bit less on Windows
+      2016-03-16 16:40:51 | c6a9e6a | [travis] Run real php subprocesses on hhvm for Process component tests
+      2016-03-16 18:31:59 | e9459f2 | Merge branch '2.7' into 2.8
+      2016-03-16 18:33:32 | 04d0744 | Merge branch '2.8' into 3.0
+      2016-03-16 18:33:49 | a99b83e | Merge branch '3.0'
+      2016-03-16 19:00:15 | d5983f9 | Merge branch '2.3' into 2.7
+      2016-03-16 19:13:58 | 8993828 | Merge branch '2.7' into 2.8
+      2016-03-16 19:19:48 | 3c02343 | Merge branch '2.8' into 3.0
+      2016-03-16 19:22:05 | 15d7351 | Merge branch '3.0'
+      2016-03-17 11:31:46 | 298eab6 | bug #18023 [Process] getIncrementalOutput should work without calling getOutput (romainneutron)
+      2016-03-23 16:11:46 | fb46747 | Merge branch '2.7' into 2.8 (tag: v2.8.4)
+      2016-03-23 16:23:25 | a0a9379 | Merge branch '2.8' into 3.0
+      2016-03-23 16:33:04 | 78ff90f | Merge branch '3.0'
+      2016-03-29 17:17:20 | ab998a8 | [Process] remove dead code
+      2016-03-29 19:06:47 | 4634eac | [Process] Fix stream_select priority when writing to stdin
+      2016-03-29 17:14:08 | 349736f | [Process] Accept Traversable input
+      2016-03-31 11:07:27 | 78e4df1 | Merge branch '2.7' into 2.8
+      2016-03-31 11:11:51 | 379dbcf | Merge branch '2.8' into 3.0
+      2016-03-31 11:13:34 | 88ad759 | Merge branch '3.0'
+      2016-03-31 18:15:42 | 3237dce | [Process] Add InputStream to seamlessly feed running processes
+      2016-04-02 10:48:01 | 75efabe | Merge branch '2.3' into 2.7
+      2016-04-02 10:57:47 | 82bf0ba | Merge branch '2.7' into 2.8
+      2016-04-02 11:04:34 | 58c8a02 | Merge branch '2.8' into 3.0
+      2016-04-02 11:08:03 | 711bd51 | Merge branch '3.0'
+      2016-04-02 14:30:41 | 5d60ebb | [Process] Implement IteratorAggregate to stream output
+      2016-04-03 18:15:29 | aa3a53d | [Process] Fixes & testNonBlockingNorClearingIteratorOutput
+      2016-04-12 14:52:58 | a49e4c6 | [Process] Consistently use getProcess() in tests (tag: v2.7.13, tag: v2.7.12)
+      2016-04-12 11:05:51 | 1574f34 | [Process] Turn getIterator() args to flags & add ITER_SKIP_OUT/ERR modes (tag: v3.1.0-RC1, tag: v3.1.0-BETA1, tag: v3.1.0)
+      2016-06-06 12:38:47 | 86de601 | `@throws` annotations should go after `@return` (tag: v2.7.14)
+      2016-06-06 14:11:27 | 115347d | Merge branch '2.7' into 2.8 (tag: v2.8.7)
+      2016-06-06 14:33:26 | bf6e2d1 | Merge branch '2.8' into 3.0 (tag: v3.0.7)
+      2016-06-06 14:34:54 | 6350e63 | Merge branch '3.0' into 3.1 (tag: v3.1.1)
+      2016-06-06 14:53:30 | d9b6903 | Merge branch '3.1'
+      2016-06-14 16:16:11 | 6be2b29 | [Process] Allow merging env vars instead of replacing them
+      2016-06-20 17:53:40 | 5a247b2 | [Process] Fix pipes cleaning on Windows
+      2016-07-26 11:02:44 | b64ed76 | Merge branch '2.7' into 2.8
+      2016-07-26 11:03:56 | aa98496 | Merge branch '2.8' into 3.0
+      2016-07-26 11:04:17 | 3faddbd | Merge branch '3.0' into 3.1
+      2016-07-26 11:08:27 | ed57828 | Merge branch '3.1'
+      2016-07-25 23:35:22 | 5e9ce25 | [Process] Fix write access check for pipes on Windows
+      2016-07-28 09:53:02 | 5ac3a48 | bug #19428 [Process] Fix write access check for pipes on Windows (nicolas-grekas) (tag: v2.7.16)
+      2016-07-28 14:13:19 | d20332e | Merge branch '2.7' into 2.8 (tag: v2.8.9)
+      2016-07-28 14:13:34 | 768debc | Merge branch '2.8' into 3.0 (tag: v3.0.9, origin/3.0)
+      2016-07-28 14:13:48 | 04c2dfa | Merge branch '3.0' into 3.1 (tag: v3.1.3)
+      2016-07-28 14:15:50 | e0ecb47 | Merge branch '3.1'
+      2016-08-02 10:17:07 | 9093bcc | [Process] Fix AbstractPipes::write() for a situation seen on HHVM (at least)
+      2016-08-02 16:52:07 | 04e3a38 | [Process] Fix double-fread() when reading unix pipes
+      2016-08-03 09:45:31 | 137fc65 | bug #19510 [Process] Fix double-fread() when reading unix pipes (nicolas-grekas)
+      2016-08-05 11:07:44 | 78a2829 | Merge branch '2.7' into 2.8
+      2016-08-05 11:37:39 | 5685d59 | Merge branch '2.8' into 3.1
+      2016-08-05 11:52:18 | 70ab1dd | Merge branch '3.1'
+      2016-08-07 18:15:52 | f4fc8fd | Merge branch '2.7' into 2.8
+      2016-08-07 18:17:34 | 7541a7b | Merge branch '2.8' into 3.1
+      2016-08-07 18:19:41 | 489010d | Merge branch '3.1'
+      2016-08-09 17:15:57 | 232d69c | [Process] Strengthen Windows pipe files opening (again...) (tag: v2.7.17)
+      2016-08-16 19:09:30 | 2d6011b | Merge branch '3.1'
+      2016-09-06 13:55:00 | 05a03ed | Merge branch '2.7' into 2.8 (tag: v2.8.11)
+      2016-09-06 14:01:47 | a17390b | Merge branch '2.8' into 3.1
+      2016-09-06 14:07:23 | 7f20312 | Merge branch '3.1'
+      2016-11-21 11:40:36 | 7ac22a7 | [Process] Do feat test before enabling TTY mode (tag: v2.7.22)
+      2016-11-24 13:40:28 | 02ea848 | Merge branch '3.1' into 3.2 (tag: v3.2.1, tag: v3.2.0-RC2, tag: v3.2.0)
+      2016-11-24 13:43:03 | b2a461e | Merge branch '3.2'
+      2017-01-31 12:03:29 | a8c0522 | [Process] Deprecate not inheriting env vars + compat related settings
+      2017-01-12 20:50:31 | e34416d | [Process] Accept command line arrays and per-run env vars, fixing signaling and escaping
+      2017-02-03 15:08:06 | 0110ac4 | Merge branch '2.7' into 2.8 (tag: v2.8.17)
+      2017-02-03 15:11:38 | 32646a7 | Merge branch '2.8' into 3.2 (tag: v3.2.3)
+      2017-02-03 15:16:22 | 6331c1d | Merge branch '3.2'
+      2017-02-18 20:06:33 | e017c13 | Merge branch '2.7' into 2.8
+      2017-02-18 20:28:00 | 2dc5b2a | Merge branch '2.8' into 3.2
+      2017-02-18 20:35:19 | c47877b | Merge branch '3.2'
+      2017-02-21 11:33:48 | 0aa0e56 | Merge branch '2.7' into 2.8
+      2017-02-21 12:11:04 | cfadfbe | Merge branch '2.8' into 3.2
+      2017-02-21 13:07:34 | 3108b29 | Merge branch '3.2'
+      2017-02-27 12:13:40 | 7d21c4a | [Process] Fix ignoring of bad env var names
+      2017-02-28 01:48:55 | e61b476 | Merge branch '3.2'
+      2017-03-04 15:20:59 | 41336b2 | Merge branch '2.7' into 2.8 (tag: v2.8.19, tag: v2.8.18)
+      2017-03-04 15:23:14 | 68bfa8c | Merge branch '2.8' into 3.2 (tag: v3.2.6, tag: v3.2.5)
+      2017-03-04 15:23:47 | b9d0d00 | Merge branch '3.2'
+      2017-04-20 17:08:24 | 4ad0b86 | [Process] Fix BC break: "exec" should remain an internal "detail"
+      2017-05-24 14:37:21 | b9b8a8a | Merge branch '3.3' into 3.4
+      2017-05-24 14:42:26 | d59b067 | Merge branch '3.4'
+      2017-06-08 21:25:37 | 201c3bd | [Process] Deprecate ProcessBuilder
+      2017-07-11 16:19:03 | db57b4e | [Process] Fix parsing args on Windows
+      2017-07-12 16:09:21 | 2695aab | Merge branch '3.3' into 3.4
+      2017-07-12 16:12:43 | e7ca75c | feature #23380 [Process] Remove enhanced sigchild compatibility (maidmaid)
+      2017-07-12 17:12:10 | 2750e65 | Merge branch '3.4'
+      2017-07-15 11:52:56 | aeea12f | Merge branch '3.3' into 3.4
+      2017-07-28 16:02:25 | b7666e9 | Bump minimal PHP version to ^5.5.9|>=7.0.8 (tag: v3.3.9, tag: v3.3.8, tag: v3.3.7)
+      2017-08-03 12:34:20 | 9794f94 | Merge branch '3.3' into 3.4
+      2017-09-15 12:59:38 | 2b7d751 | Merge branch '2.7' into 2.8
+      2017-09-15 13:08:59 | d835028 | Merge branch '2.8' into 3.3
+      2017-09-15 13:12:22 | 7e63d48 | Merge branch '3.3' into 3.4
+      2017-09-15 13:16:43 | 89a6ce3 | Merge branch '3.4'
+      2017-10-02 00:00:16 | 26c9fb0 | Merge branch '2.7' into 2.8 (tag: v2.8.28)
+      2017-10-02 09:42:24 | fdf89e5 | Merge branch '2.8' into 3.3 (tag: v3.3.10)
+      2017-10-02 09:49:52 | 6a5ea9d | Merge branch '3.3' into 3.4
+      2017-10-02 09:59:24 | 39babf9 | Merge branch '3.4'
+      2017-10-20 22:28:39 | 8100dd7 | Merge branch '3.4'
+      2017-10-22 19:42:21 | 7f36346 | [DI] minor docblock fixes
+      2017-10-24 16:48:52 | 6f27a54 | Merge branch '2.7' into 2.8
+      2017-10-24 17:05:06 | 7bbbc32 | Merge branch '2.8' into 3.3
+      2017-10-24 17:12:06 | ae1f0fe | Merge branch '3.3' into 3.4 (tag: v3.4.0-BETA2)
+      2017-10-24 17:16:56 | f0af95e | Merge branch '3.4'
+      2017-10-19 04:32:22 | a355d05 | Remove some visual debt by adding type hints on final methods/classes (tag: v4.0.0-BETA2)
+      2017-10-28 21:51:46 | 45e79d9 | Remove useless docblocks (tag: v2.7.39, tag: v2.7.38, tag: v2.7.37, tag: v2.7.36)
+      2017-11-05 18:25:56 | d25449e | Merge branch '2.7' into 2.8 (tag: v2.8.32, tag: v2.8.31, tag: v2.8.30, tag: v2.8.29)
+      2017-11-05 18:47:03 | e14bb64 | Merge branch '2.8' into 3.3 (tag: v3.3.11)
+      2017-11-05 19:10:10 | dce0aae | Merge branch '3.3' into 3.4 (tag: v3.4.0-BETA4, tag: v3.4.0-BETA3)
+      2017-11-05 19:26:21 | 049573c | Merge branch '3.4' (tag: v4.0.0-BETA3)
+      2017-10-28 21:15:32 | 14ec41f | Replace more docblocks by type-hints (tag: v4.0.0-BETA4)
+      2017-11-13 01:15:07 | f4301ad | fix cs
+      2017-11-13 13:10:10 | fb8d7fe | [Process] Skip ProcessTest::testSimpleInputStream() because of bug #75515 in PHP 7.2RC6
+      2017-11-13 13:20:40 | cdc66ce | Merge branch '3.3' into 3.4
+      2017-11-13 13:20:53 | 1cb31ec | Merge branch '3.4'
+      2017-11-13 18:31:11 | a56a398 | [Process] Workaround PHP bug #75515 in ProcessTest::testSimpleInputStream() (tag: v3.3.14, tag: v3.3.13, tag: v3.3.12)
+      2017-11-13 21:20:08 | c1638ca | Merge branch '3.3' into 3.4 (tag: v3.4.0-RC1)
+      2017-11-13 21:20:21 | 2a13990 | Merge branch '3.4' (tag: v4.0.0-RC1)
+      2017-11-22 13:17:59 | db25e81 | [Lock][Process][FrameworkBundle] fix tests (tag: v3.4.1, tag: v3.4.0-RC2, tag: v3.4.0)
+      2017-11-22 15:29:35 | 685dc11 | Merge branch '3.4' into 4.0 (tag: v4.0.1, tag: v4.0.0-RC2, tag: v4.0.0)
+      2017-11-23 14:04:09 | eb4b2f8 | Merge branch '4.0'
+      2017-12-08 15:32:59 | 602bad6 | Merge branch '2.7' into 2.8
+      2017-12-08 17:18:43 | affbace | Merge branch '2.8' into 3.3
+      2017-12-08 18:24:53 | 457261c | Merge branch '3.3' into 3.4
+      2017-12-08 18:46:13 | 0b6edd6 | Merge branch '3.4' into 4.0
+      2017-12-08 18:58:17 | d9cc055 | Merge branch '4.0'
+      2017-12-09 11:36:12 | 4cd7b29 | minor #25388 [Process] add type hint and changelog entry (xabbuh)
+      2017-12-10 12:47:05 | d7c95ff | [Process] Dont rely on putenv(), it fails on ZTS PHP
+      2017-12-11 22:35:50 | 3414b3f | [Process] remove false-positive BC breaking exception on Windows
+      2017-12-12 11:41:51 | 1397a5c | Merge branch '3.4' into 4.0
+      2017-12-12 11:59:50 | f1a7a49 | Merge branch '4.0'
+      2017-12-12 14:12:43 | 6778bb0 | Merge branch '2.7' into 2.8
+      2017-12-12 14:20:26 | 8af356e | Merge branch '2.8' into 3.3
+      2017-12-20 14:18:49 | 977afa0 | [Process] Dont use getenv(), it returns arrays and can introduce subtle breaks accros PHP versions
+      2017-12-20 18:25:04 | 023f815 | [Process] Fix setting empty env vars
+      2017-12-23 01:00:09 | 0e37081 | [Process] Skip false-positive test on Windows/appveyor
+      2017-12-29 23:55:26 | 7003dd0 | Merge branch '3.3' into 3.4
+      2017-12-30 00:00:20 | e8b5721 | Merge branch '3.4' into 4.0
+      2017-12-30 00:01:22 | 83fbd98 | Merge branch '4.0'
+      2017-12-30 00:24:25 | 067046d | [Process] Make `PhpExecutableFinder` look for the `PHP_BINARY` env var
+      2018-01-02 18:45:22 | 6e8081b | Merge branch '2.7' into 2.8
+      2018-01-02 18:47:19 | 7c3a38e | Merge branch '2.8' into 3.3
+      2018-01-02 18:47:31 | b2d4645 | Merge branch '3.3' into 3.4
+      2018-01-02 19:33:53 | c0fb75d | Merge branch '3.4' into 4.0
+      2018-01-02 19:34:13 | 399895e | Merge branch '4.0'
+      2018-01-07 12:28:20 | 25dee15 | minor #25585 Add type string to docblock for Process::setInput() (icanhazstring)
+      2018-01-21 22:05:02 | 7db10ba | Merge branch '3.3' into 3.4
+      2018-01-21 22:06:11 | fa5da79 | Merge branch '3.4' into 4.0
+      2018-01-21 22:07:38 | 6bb254f | Merge branch '4.0'
+      2018-02-04 19:22:42 | 709e15e | [Process] Check PHP_BINDIR before $PATH in PhpExecutableFinder
+      2018-02-12 17:17:16 | 560d7fe | [Process] fix test case (tag: v2.7.43, tag: v2.7.42)
+      2018-02-12 20:44:58 | 756f614 | Merge branch '2.7' into 2.8 (tag: v2.8.36, tag: v2.8.35)
+      2018-02-12 20:55:00 | cc4aea2 | Merge branch '2.8' into 3.4 (tag: v3.4.6, tag: v3.4.5)
+      2018-02-12 20:55:14 | 3701a84 | Merge branch '3.4' into 4.0
+      2018-02-12 20:55:29 | 5a86b89 | Merge branch '4.0'
+      2018-02-22 14:40:25 | 6669e49 | Merge branch '4.0'
+      2018-02-28 22:33:07 | b9e2b78 | [Process] fix interpolation of placeholders
+      2018-03-02 15:21:49 | 4424a9d | Revert "feature #24763 [Process] Allow writing portable "prepared" command lines (Simperfit)"
+      2018-03-20 00:11:56 | c2fc900 | Merge branch '2.7' into 2.8 (tag: v2.8.37)
+      2018-03-20 01:32:39 | 6745cdc | Merge branch '2.8' into 3.4
+      2018-03-20 01:35:49 | d88b792 | Merge branch '3.4' into 4.0
+      2018-03-20 01:38:22 | 22123ea | Merge branch '4.0'
+      2018-03-22 16:45:58 | 8bd128b | Merge branch '4.0'
+      2018-05-11 05:25:00 | 8905973 | [Filesystem] Fix usages of error_get_last()
+      2018-05-15 11:20:41 | df9e3c6 | bug #27141 [Process] Suppress warnings when open_basedir is non-empty (cbj4074) (tag: v2.7.49, tag: v2.7.48, tag: v2.7.47)
+      2018-05-16 00:17:45 | 713952f | Merge branch '2.7' into 2.8 (tag: v2.8.41, tag: v2.8.40)
+      2018-05-16 11:49:21 | 4cbf2db | Merge branch '2.8' into 3.4 (tag: v3.4.11, tag: v3.4.10)
+      2018-05-16 12:05:32 | 3621fa7 | Merge branch '3.4' into 4.0 (tag: v4.0.11, tag: v4.0.10)
+      2018-05-16 17:33:22 | aed55ab | Merge branch '4.0' into 4.1 (tag: v4.1.0-BETA3, tag: v4.1.0-BETA2)
+      2018-05-16 17:42:13 | 4f10286 | Merge branch '4.1'
+      2018-05-30 10:24:25 | 73445bd | Revert "feature #26702 Mark ExceptionInterfaces throwable (ostrolucky)" (tag: v4.1.0)
+      2018-05-31 13:16:04 | caceff9 | Merge branch '3.4' into 4.0 (tag: v4.0.13, tag: v4.0.12)
+      2018-05-31 13:16:29 | 1d16773 | Merge branch '4.0' into 4.1 (tag: v4.1.2, tag: v4.1.1)
+      2018-05-31 13:18:23 | 3bca3ba | Merge branch '4.1'
+      2018-07-03 14:59:14 | d6f417d | [Process][Console] deprecated defining commands as strings
+      2018-07-26 11:45:46 | 2c5d86b | Merge branch '2.8' into 3.4
+      2018-07-26 11:51:09 | 99e6140 | Merge branch '3.4' into 4.0
+      2018-07-26 11:55:25 | ba8530a | Merge branch '4.0' into 4.1
+      2018-07-26 11:59:12 | ff7fb2d | Merge branch '4.1'
+      2018-07-26 12:03:18 | e52aba7 | Alpha-ordering for "use" statements
+      2018-07-26 12:06:28 | 7d08376 | Merge branch '2.8' into 3.4
+      2018-07-26 12:08:35 | bfaed9e | Merge branch '3.4' into 4.0
+      2018-07-26 12:10:45 | 170c7c2 | Merge branch '4.0' into 4.1
+      2018-07-26 12:13:01 | 9bcc8b6 | Merge branch '4.1'
+      2018-07-26 14:13:39 | cc83afd | Enable native_constant_invocation CS fixer (tag: v2.8.44)
+      2018-07-26 14:19:56 | 0414db2 | Merge branch '2.8' into 3.4 (tag: v3.4.14)
+      2018-07-26 14:22:46 | 3c8d4b5 | Merge branch '3.4' into 4.0 (tag: v4.0.14)
+      2018-07-26 14:24:31 | f01fc7a | Merge branch '4.0' into 4.1 (tag: v4.1.3)
+      2018-07-26 14:25:51 | 42e1ccf | Merge branch '4.1'
+      2018-08-02 09:56:36 | 4be278e | [travis] merge "same Symfony version" jobs in one (tag: v2.8.45)
+      2018-08-03 13:42:44 | 4d6b125 | Merge branch '2.8' into 3.4 (tag: v3.4.15)
+      2018-08-03 14:13:38 | 86cdb93 | Merge branch '3.4' into 4.1 (tag: v4.1.4)
+      2018-08-03 14:20:06 | ce937c3 | Merge branch '4.1'
+      2018-09-02 20:11:59 | 87798b5 | Merge branch '2.8' into 3.4
+      2018-09-08 16:15:14 | 8b87aca | Merge branch '2.8' into 3.4 (tag: v3.4.16)
+      2018-09-08 16:24:10 | c646478 | Merge branch '3.4' into 4.1 (tag: v4.1.5)
+      2018-09-08 16:42:43 | fab0bc3 | Merge branch '4.1'
+      2018-10-02 15:28:39 | 1dc2977 | Merge branch '2.8' into 3.4 (tag: v3.4.17)
+      2018-10-02 15:40:59 | ee33c03 | Merge branch '3.4' into 4.1 (tag: v4.1.6)
+      2018-10-02 15:43:31 | a867125 | Merge branch '4.1'
+      2018-10-02 19:52:16 | a15cb61 | [Process] fix locking of pipe files on Windows (tag: v2.8.47)
+      2018-10-10 16:41:17 | a4d186e | Merge branch '2.8' into 3.4
+      2018-10-10 16:52:42 | b57f594 | Merge branch '3.4' into 4.1
+      2018-10-10 16:54:27 | dbd4c71 | Merge branch '4.1'
+      2018-10-14 22:02:12 | 31e9bb7 | Merge branch '3.4' into 4.1
+      2018-10-14 23:50:41 | 5e809aa | Merge branch '4.1'
+      2018-10-23 11:23:47 | 81bb068 | [Process] fix waitUntil+add tests
+      2018-10-24 13:10:48 | d1647d7 | [Process] pass all output to the wait-until callback
+      2018-10-29 12:58:37 | 9e53cba | [Process] fix transient test (tag: v4.2.0-BETA1)
+      2018-11-11 22:48:54 | 4aa7abb | Merge branch '2.8' into 3.4
+      2018-11-11 22:51:29 | 85f5651 | Merge branch '3.4' into 4.1
+      2018-11-11 22:51:51 | 3665ff1 | Merge branch '4.1' (tag: v4.2.0-BETA2)
+      2018-11-20 19:10:26 | abb46b9 | fix cs (tag: v3.4.20, tag: v3.4.19)
+      2018-11-20 19:14:00 | 471f6e2 | Merge branch '3.4' into 4.1 (tag: v4.1.9, tag: v4.1.8)
+      2018-11-20 19:22:05 | 2b34100 | Merge branch '4.1' (tag: v4.2.1, tag: v4.2.0-RC1, tag: v4.2.0)
+      2018-12-13 15:39:50 | 5bfdc65 | Merge branch '4.1' into 4.2
+      2018-12-13 15:43:21 | d87c6f0 | Merge branch '4.2'
+      2019-01-25 01:05:03 | 6c05edb | [Process] disable transient test on Windows (tag: v4.2.4, tag: v4.2.3)
+      2019-01-25 01:35:38 | 9a8319d | Merge branch '4.2'
+      2019-03-10 23:07:02 | 1e6cbb4 | [Process] fix using argument $php of new PhpProcess() (tag: v4.2.5)
+      2019-03-11 23:50:47 | 9ba593f | Merge branch '4.2'
+      2019-05-26 23:47:34 | 57f11a0 | Merge branch '3.4' into 4.2 (tag: v4.2.9)
+      2019-05-26 23:47:49 | a5e3dd4 | Merge branch '4.2' into 4.3 (tag: v4.3.0-RC1, tag: v4.3.0)
+      2019-05-26 23:48:03 | 8293e08 | Merge branch '4.3'
+      2019-05-28 16:10:17 | bf59d6c | Bump Symfony 5.0 to PHP 7.2
+      2019-05-30 19:06:08 | 808a4be | Merge branch '3.4' into 4.2 (tag: v4.2.12, tag: v4.2.11, tag: v4.2.10, origin/4.2)
+      2019-05-30 19:10:05 | 856d358 | Merge branch '4.2' into 4.3 (tag: v4.3.3, tag: v4.3.2, tag: v4.3.1)
+      2019-05-30 19:10:19 | 1a42849 | Merge branch '4.3' into 4.4
+      2019-05-30 19:12:02 | 5c9ba47 | Merge branch '4.4'
+      2019-06-08 17:53:56 | 8287745 | Remove deprecated code paths that trigger a runtime notice
+      2019-06-26 12:36:22 | a705c06 | Merge branch '4.4'
+      2019-07-18 13:46:32 | f40deb1 | Merge branch '4.4'
+      2019-07-18 19:52:37 | cc053ef | feature #32475 [Process] Deprecate Process::inheritEnvironmentVariables() (ogizanagi)
+      2019-07-18 23:51:58 | 330cd53 | Merge branch '4.4'
+      2019-07-31 22:19:25 | c95d971 | Make tests support phpunit 8
+      2019-08-01 01:28:44 | 9d4e34d | Merge branch '3.4' into 4.3
+      2019-08-01 01:33:28 | fe4e683 | Merge branch '4.3' into 4.4
+      2019-08-01 01:36:24 | edcb4b0 | Merge branch '4.4'
+      2019-08-01 12:21:10 | 2c81fc1 | Merge branch '3.4' into 4.3
+      2019-08-01 12:21:25 | 35454be | Merge branch '4.3' into 4.4
+      2019-08-01 12:33:55 | 97a5020 | Merge branch '4.4'
+      2019-08-02 00:14:19 | 223dc3e | Merge branch '3.4' into 4.3
+      2019-08-02 00:16:36 | dd235be | Merge branch '4.3' into 4.4
+      2019-08-02 00:17:12 | 03d188b | Merge branch '4.4'
+      2019-08-02 14:51:32 | 212ae58 | Merge branch '3.4' into 4.3
+      2019-08-02 15:22:55 | ea1fa76 | Merge branch '4.3' into 4.4
+      2019-08-02 15:41:59 | 71c632d | Merge branch '4.4'
+      2019-08-04 00:50:52 | c6e7077 | Merge branch '3.4' into 4.3
+      2019-08-04 00:59:26 | 2faaf08 | Merge branch '4.3' into 4.4
+      2019-08-04 01:02:11 | 29e8f9b | Merge branch '4.4'
+      2019-08-06 10:11:09 | a91cbf9 | Merge branch '3.4' into 4.3
+      2019-08-06 10:11:23 | 1555f9b | Merge branch '4.3' into 4.4
+      2019-08-06 10:16:59 | d7ff401 | Merge branch '4.4'
+      2019-08-08 15:07:40 | 1f31933 | Merge branch '4.3' into 4.4
+      2019-08-08 15:08:24 | 01b7056 | Merge branch '4.4'
+      2019-08-08 18:01:55 | dcd467d | minor #32800 Improve some URLs (Arman-Hosseini)
+      2019-08-08 18:11:33 | e1bf53a | Merge branch '3.4' into 4.3
+      2019-08-08 18:13:31 | 262101c | Merge branch '4.3' into 4.4
+      2019-08-08 18:14:45 | 823e83f | minor #33056 cleanup remaining param $options and internal Intl FullTransformer (Tobion)
+      2019-08-08 18:17:03 | 25156ce | Merge branch '4.4'
+      2019-08-12 23:21:04 | 910b30e | Fix return statements
+      2019-08-13 09:39:03 | c2f2fa6 | Merge branch '3.4' into 4.3
+      2019-08-13 09:48:26 | 3549092 | Merge branch '4.3' into 4.4
+      2019-08-13 09:58:13 | da4c413 | Merge branch '4.4'
+      2019-08-14 15:26:46 | 9149c03 | Merge branch '3.4' into 4.3
+      2019-08-14 15:37:46 | 55b7677 | Merge branch '4.3' into 4.4
+      2019-08-14 15:45:29 | b99e1d4 | Merge branch '4.4'
+      2019-08-19 14:14:47 | f9ddc06 | Merge branch '3.4' into 4.3
+      2019-08-19 14:17:23 | 47c98d6 | Merge branch '4.3' into 4.4
+      2019-08-19 14:20:07 | aab85ee | Merge branch '4.4'
+      2019-08-20 16:44:39 | 82ef18a | Merge branch '3.4' into 4.3
+      2019-08-20 17:44:19 | 456cfbc | Merge branch '4.3' into 4.4
+      2019-08-20 17:46:00 | 18dc23c | Merge branch '4.4'
+      2019-08-20 14:52:38 | 74b8a1b | Add return types to internal|final|private methods
+      2019-08-20 19:24:39 | abe1ed3 | some backports from master
+      2019-08-20 19:53:57 | 3e0f5fc | Merge branch '4.4'
+      2019-08-21 16:30:43 | 9772c0c | Add return types to tests and final|internal|private methods
+      2019-08-21 18:37:45 | 525876e | Merge branch '4.4'
+      2019-08-21 18:54:28 | 1b0f72c | minor #33154 Parameter type leftovers (derrabus)
+      2019-08-22 16:01:48 | a45103d | Add return types to internal & magic methods when possible
+      2019-08-22 16:39:30 | f9fa21d | Merge branch '4.4'
+      2019-08-21 19:20:57 | 10f4eff | [HttpFoundation] fix return type declarations
+      2019-08-24 18:07:50 | d822cb6 | [Process] fix return type declarations (tag: v3.4.31)
+      2019-08-26 11:26:39 | e89969c | Merge branch '3.4' into 4.3 (tag: v4.3.4)
+      2019-08-26 11:59:45 | 0c03768 | Merge branch '4.3' into 4.4
+      2019-08-26 12:05:36 | fe4c25e | Merge branch '4.4'
+      2019-09-13 12:27:15 | f143c1e | Re-enable previously failing PHP 7.4 test cases
+      2019-09-19 18:49:01 | 1997da2 | Merge branch '3.4' into 4.3
+      2019-09-19 18:56:27 | b5066f5 | Merge branch '4.3' into 4.4
+      2019-09-19 19:03:37 | d8aab65 | Merge branch '4.4'
+      2019-09-19 20:10:56 | 8f5a739 | [Process] fix typo in tests
+      2019-09-19 20:11:01 | fcf3418 | Merge branch '3.4' into 4.3
+      2019-09-19 20:12:09 | 6e9760c | Merge branch '4.3' into 4.4
+      2019-09-19 20:12:13 | c06625f | Merge branch '4.4'
+      2019-09-27 00:17:10 | 5055689 | Merge branch '3.4' into 4.3 (tag: v4.3.5)
+      2019-09-27 01:09:58 | 8c4a035 | Merge branch '4.3' into 4.4
+      2019-09-27 01:15:24 | a305eb1 | Merge branch '4.4'
+      2019-10-07 12:06:09 | 13aa01f | Merge branch '4.4'
+      2019-10-22 20:21:12 | c05c78d | Merge branch '4.4' (tag: v5.0.0-RC1, tag: v5.0.0-BETA2, tag: v5.0.0-BETA1)
+      2019-10-28 20:07:32 | 3b2e0cb | Merge branch '3.4' into 4.3 (tag: v4.3.8, tag: v4.3.7, tag: v4.3.6)
+      2019-10-28 23:30:34 | 75ad33d | Merge branch '4.3' into 4.4 (tag: v4.4.0-RC1, tag: v4.4.0-BETA2, tag: v4.4.0-BETA1, tag: v4.4.0)
+      2019-11-18 20:27:11 | 110f98b | Allow PHP ^7.2.5 (tag: v5.0.0)
+      2019-11-21 10:02:52 | e4eb5b2 | Merge branch '5.0'
+      2019-11-28 13:05:26 | 207dab1 | Merge branch '3.4' into 4.3 (tag: v4.3.9)
+      2019-11-28 16:33:56 | 51c0135 | Merge branch '4.3' into 4.4 (tag: v4.4.1)
+      2019-11-28 17:20:16 | 1568a2e | Merge branch '4.4' into 5.0 (tag: v5.0.1)
+      2019-11-28 17:26:02 | f6ddf8d | Merge branch '5.0'
+      2019-12-06 13:06:46 | b84501a | [Process] change the syntax of portable prepared command lines (tag: v4.4.2)
+      2019-12-10 14:06:55 | ea2dc31 | Merge branch '4.4' into 5.0 (tag: v5.0.2)
+      2019-12-10 14:07:17 | ee73a76 | Merge branch '5.0'
+      2020-01-04 15:24:57 | 655d485 | Merge branch '3.4' into 4.3
+      2020-01-04 16:00:46 | 99c5c49 | Merge branch '4.3' into 4.4
+      2020-01-04 17:08:26 | 18afb55 | Merge branch '4.4' into 5.0
+      2020-01-04 17:20:45 | d471271 | Merge branch '5.0'
+      2020-01-09 12:50:08 | f5697ab | Merge branch '4.3' into 4.4 (tag: v4.4.4, tag: v4.4.3)
+      2020-01-09 12:53:06 | f9ffd87 | Merge branch '4.4' into 5.0 (tag: v5.0.4, tag: v5.0.3)
+      2020-01-09 12:56:45 | 7075b84 | Merge branch '5.0'
+      2020-02-08 20:00:58 | fd4a86d | Merge branch '4.4' into 5.0 (tag: v5.0.5)
+      2020-02-08 20:01:13 | afa3097 | Merge branch '5.0'
+      2020-03-03 22:07:47 | db5d570 | Leverage PHP8's get_debug_type()
+      2020-03-17 23:06:25 | 2c5dfe5 | Merge branch '5.0'
+      2020-03-23 15:37:11 | b9863d0 | Merge branch '3.4' into 4.4 (tag: v4.4.6)
+      2020-03-23 15:42:46 | 67abad0 | Merge branch '4.4' into 5.0 (tag: v5.0.6)
+      2020-03-23 15:45:08 | c94f40c | Merge branch '5.0'
+      2020-03-30 14:43:41 | 2e48825 | Merge branch '5.0'
+      2020-04-11 00:22:25 | da0704d | Merge branch '4.4' into 5.0
+      2020-04-11 00:23:06 | 6cdb2d5 | Merge branch '5.0'
+      2020-04-15 18:56:18 | 4b6a9a4 | bug #36408 [PhpUnitBridge] add PolyfillTestCaseTrait::expectExceptionMessageMatches to provide FC with recent phpunit versions (soyuka) (tag: v4.4.8)
+      2020-04-15 18:59:10 | 3179f68 | Merge branch '4.4' into 5.0 (tag: v5.0.8)
+      2020-04-15 19:09:08 | 14c0d48 | Merge branch '5.0' (tag: v5.1.0-RC1, tag: v5.1.0-BETA1)
+      2020-05-20 20:38:26 | 411a572 | Merge branch '4.4' into 5.0
+      2020-05-20 20:43:50 | 29751f0 | Merge branch '5.0' into 5.1
+      2020-05-20 20:44:07 | 2aa6f94 | Merge branch '5.1'
+      2020-05-23 19:55:06 | 8a895f0 | Make PHP 8 green on Travis (tag: v3.4.42, tag: v3.4.41)
+      2020-05-23 20:20:05 | 47c5548 | Merge branch '3.4' into 4.4
+      2020-05-24 11:40:42 | 3c9b50d | Merge branch '4.4' into 5.0
+      2020-05-24 11:49:09 | 17ee34e | Merge branch '5.0' into 5.1 (tag: v5.1.0-RC2)
+      2020-05-24 12:01:01 | 0d23e3c | Merge branch '5.1'
+      2020-05-30 23:06:45 | c714958 | Merge branch '3.4' into 4.4 (tag: v4.4.9, tag: v4.4.10)
+      2020-05-30 23:12:43 | 971862a | Merge branch '4.4' into 5.0 (tag: v5.0.9, tag: v5.0.10)
+      2020-05-30 23:35:19 | 7f6378c | Merge branch '5.0' into 5.1 (tag: v5.1.2, tag: v5.1.1, tag: v5.1.0)
+      2020-05-30 23:38:10 | 2cf3f13 | Merge branch '5.1'
+      2020-07-06 16:18:39 | b180a89 | Merge branch '3.4' into 4.4
+      2020-07-06 16:22:03 | b521141 | Merge branch '4.4' into 5.0
+      2020-07-06 16:23:11 | 441fb20 | Merge branch '5.0' into 5.1
+      2020-07-06 16:25:45 | d158a45 | Merge branch '5.1'
+      2020-07-23 11:31:43 | 65e70ba | Merge branch '3.4' into 4.4 (tag: v4.4.13, tag: v4.4.12, tag: v4.4.11)
+      2020-07-23 11:36:09 | f105234 | Merge branch '4.4' into 5.0 (tag: v5.0.11, origin/5.0)
+      2020-07-23 11:36:24 | 1864216 | Merge branch '5.0' into 5.1 (tag: v5.1.5, tag: v5.1.4, tag: v5.1.3)
+      2020-07-23 11:36:44 | f4619b7 | Merge branch '5.1'
+      2020-09-02 19:06:40 | 46a862d | Enable "native_constant_invocation" CS rule (tag: v3.4.45)
+      2020-09-02 19:08:58 | 9b887ac | Merge branch '3.4' into 4.4 (tag: v4.4.15, tag: v4.4.14)
+      2020-09-02 19:23:27 | d3a2e64 | Merge branch '4.4' into 5.1 (tag: v5.1.7, tag: v5.1.6)
+      2020-09-02 19:27:44 | bc88053 | Merge branch '5.1'
+      2020-10-06 14:13:36 | a525501 | Remove "branch-alias", populate "version"
+      2020-10-06 14:41:17 | 872af74 | Merge branch '3.4' into 4.4
+      2020-10-06 14:49:34 | 4cef245 | Merge branch '4.4' into 5.1
+      2020-10-06 15:00:29 | 0599f91 | Merge branch '5.1' into 5.x
+      2020-10-06 17:37:11 | faf2a00 | Update versions in composer.json
+      2020-10-06 18:45:41 | e096275 | Merge branch '3.4' into 4.4
+      2020-10-06 18:48:42 | a7401bd | Merge branch '4.4' into 5.1
+      2020-10-06 18:53:16 | 74bc689 | Merge branch '5.1' into 5.x
+      2020-10-07 15:58:11 | 1582109 | Remove "version" from composer.json files, use "branch-version" instead
+      2020-10-13 15:30:56 | 4a18e7e | Merge branch '3.4' into 4.4
+      2020-10-13 15:35:38 | 788a506 | Merge branch '4.4' into 5.1
+      2020-10-13 15:43:06 | e326738 | Merge branch '5.1' into 5.x
+      2020-10-13 16:20:16 | b8783cc | Fix branch-version
+      2020-10-13 16:20:53 | 040cf8e | Merge branch '3.4' into 4.4
+      2020-10-13 16:21:37 | 5a6c048 | Merge branch '4.4' into 5.1
+      2020-10-13 16:22:54 | f3957bc | Merge branch '5.1' into 5.x (tag: v5.2.0-BETA2)
+      2020-10-24 13:23:57 | b8648cf | Remove branch-version (keep them for contracts only) (tag: v3.4.47, tag: v3.4.46, origin/3.4)
+      2020-10-24 14:50:19 | 2f4b049 | Merge branch '3.4' into 4.4 (tag: v4.4.16)
+      2020-10-24 15:01:57 | f00872c | Merge branch '4.4' into 5.1 (tag: v5.1.8)
+      2020-10-24 15:08:07 | 88d4719 | Merge branch '5.1' into 5.x (tag: v5.2.0-BETA3)
+      2020-11-02 18:45:32 | b25b468 | Merge branch '4.4' into 5.1 (tag: v5.1.9)
+      2020-11-02 18:46:10 | 240e741 | Merge branch '5.1' into 5.x (tag: v5.2.0-RC2, tag: v5.2.0-RC1, tag: v5.2.0)
+      2020-12-08 19:59:59 | 075316f | Apply "visibility_required" CS rule to constants (tag: v4.4.18)
+      2020-12-08 20:02:38 | 8063b99 | Merge branch '4.4' into 5.1 (tag: v5.1.10)
+      2020-12-08 20:03:37 | bd8815b | Merge branch '5.1' into 5.2 (tag: v5.2.1)
+      2021-01-12 17:25:50 | fdd3107 | Merge branch '4.4' into 5.1
+      2021-01-12 17:28:55 | 68c1306 | Merge branch '5.1' into 5.2
+      2021-01-14 18:08:15 | e9c4ef4 | CS fix
+      2021-01-14 18:25:38 | 9ee12c5 | Merge branch '4.4' into 5.1
+      2021-01-14 18:36:50 | b8d6eff | Merge branch '5.1' into 5.2
+      2021-01-27 13:01:46 | d279ae7 | Merge branch '4.4' into 5.1 (tag: v5.1.11, origin/5.1)
+      2021-01-27 13:15:41 | 313a38f | Merge branch '5.1' into 5.2 (tag: v5.2.4, tag: v5.2.3, tag: v5.2.2)
+      2021-05-19 16:18:37 | 2ad752b | Bump Symfony 6 to PHP 8
+      2021-05-26 15:52:38 | 53e36cb | Merge branch '4.4' into 5.2 (tag: v5.3.0, tag: v5.2.10)
+      2021-05-26 20:44:04 | 613422c | Merge branch '5.4' into 6.0
+      2021-06-02 19:09:43 | 4a56cc9 | Update phpunit.xml.dist files for phpunit >= 9.3
+      2021-06-12 13:15:01 | 714b47f | Merge branch '4.4' into 5.2 (tag: v5.3.2, tag: v5.2.11)
+      2021-06-12 13:17:43 | b88fe1c | Merge branch '5.4' into 6.0
+      2021-05-27 20:18:44 | 25fc22d | Add union types
+      2021-07-02 17:28:33 | da38d90 | Backport type fixes
+      2021-07-02 18:14:39 | c63113d | Merge branch '4.4' into 5.2
+      2021-07-12 12:26:55 | 545332f | Add return types, round 1
+      2021-07-21 15:38:00 | d49dbec | Merge branch '4.4' into 5.2
+      2021-07-21 15:48:45 | 24058c7 | Merge branch '5.4' into 6.0
+      2021-07-23 18:40:29 | 0b7dc55 | [4.4] Add missing `@return` annotations (tag: v4.4.27)
+      2021-07-23 18:54:19 | d16634e | Merge branch '4.4' into 5.2 (tag: v5.3.4, tag: v5.2.12, origin/5.2)
+      2021-07-23 19:02:39 | b756a61 | Merge branch '5.4' into 6.0
+      2021-07-21 13:04:28 | e96c4f6 | Narrow existing return types on private/internal/final/test methods
+      2021-08-12 18:01:43 | 03ee97a | Add return types - batch 2/n
+      2021-08-16 19:31:32 | ff98682 | Run php-cs-fixer
+      2021-08-12 16:32:19 | e8749eb | Cleanup more `@return` annotations
+      2021-08-17 18:35:52 | 17032eb | Merge branch '5.4' into 6.0
+      2021-08-24 19:27:03 | a3ab479 | Add some missing return types to internal/final classes
+      2021-08-24 23:21:00 | 3ecb9b7 | Add back `@return $this` annotations
+      2021-10-05 18:32:15 | 6d4b8b3 | Add type to final/internal public/protected properties
+      2021-11-16 11:58:02 | a8d1a7b | [Process] intersect with getenv() to populate default envs (tag: v4.4.34)
+      2021-11-17 15:16:12 | 6c99204 | Merge branch '4.4' into 5.3 (tag: v5.3.11)
+      2021-11-17 15:18:18 | 956acb3 | Merge branch '5.3' into 5.4 (tag: v5.4.0-BETA3)
+      2021-11-17 15:23:22 | bcf5440 | Merge branch '5.4' into 6.0 (tag: v6.0.0-BETA3)
+      2021-11-23 01:02:22 | b18a29b | [Process] exclude argv/argc from possible default env vars
+      2021-11-23 01:24:25 | e445dab | Merge branch '4.4' into 5.3
+      2021-11-23 01:25:10 | 2a7d4ed | Merge branch '5.3' into 5.4
+      2021-11-23 01:30:31 | c209870 | [Process] filter env vars for "argc" & "argv" specifically (tag: v4.4.35)
+      2021-11-23 01:39:13 | e498803 | Merge branch '4.4' into 5.3 (tag: v5.3.12)
+      2021-11-23 01:40:10 | 762e4f7 | Merge branch '5.3' into 5.4
+      2021-11-23 01:40:17 | c579806 | Merge branch '5.4' into 6.0
+      2021-11-23 17:18:55 | e8f02d0 | [Messenger][Process] Add SensioLabs as a backer to the README (tag: v5.4.0-RC1)
+      2021-11-23 22:05:29 | d44e6e0 | Merge branch '5.4' into 6.0 (tag: v6.0.0-RC1)
+      2021-11-28 18:23:54 | 75c91d6 | Merge branch '4.4' into 5.3
+      2021-11-28 18:25:38 | 5be20b3 | Merge branch '5.3' into 5.4 (tag: v5.4.0)
+      2021-11-28 18:34:37 | d970c45 | Merge branch '5.4' into 6.0 (tag: v6.0.0)
+      2021-12-17 00:17:20 | ff1cabb | CS fixes
+      2021-12-17 00:37:57 | fb57120 | Merge branch '4.4' into 5.3
+      2021-12-17 00:52:00 | 9a5dd51 | Merge branch '5.3' into 5.4
+      2021-12-17 01:05:41 | 00b8863 | Merge branch '5.4' into 6.0
+      2021-12-17 01:14:15 | 36294ab | Merge branch '6.0' into 6.1
+      2022-01-24 22:35:44 | 8bbae08 | Merge branch '4.4' into 5.3 (tag: v5.3.14, origin/5.3)
+      2022-01-26 19:28:35 | 553f504 | Merge branch '5.3' into 5.4 (tag: v5.4.3)
+      2022-01-26 20:23:29 | 298ed35 | Merge branch '5.4' into 6.0 (tag: v6.0.3)
+      2022-01-27 13:12:23 | 9ad2336 | Merge branch '6.0' into 6.1
+      2022-02-09 17:00:38 | e0d623c | Bump minimum version of PHP to 8.1
+      2022-03-18 19:18:39 | 54e9d76 | [Finder] fix tests on Windows (tag: v4.4.40)
+      2022-03-18 19:18:52 | 38a44b2 | Merge branch '4.4' into 5.4 (tag: v5.4.7)
+      2022-03-18 19:21:55 | e13f675 | Merge branch '5.4' into 6.0 (tag: v6.0.7)
+      2022-03-18 19:23:14 | 10216a1 | Merge branch '6.0' into 6.1
+      2022-04-12 19:11:42 | d074154 | Merge branch '5.4' into 6.0 (tag: v6.0.8)
+      2022-04-12 19:22:53 | 453a55e | Merge branch '6.0' into 6.1 (tag: v6.1.0-BETA1)
+      2022-05-11 15:12:29 | 3187184 | Update sponsors of components v6.1 (tag: v6.1.0-RC1, tag: v6.1.0)
+      2022-06-27 16:16:42 | 5cee9cd | CS fixes (tag: v4.4.44, origin/4.4)
+      2022-06-27 19:58:25 | 6e75fe6 | Merge branch '4.4' into 5.4 (tag: v5.4.11)
+      2022-06-27 20:10:44 | 44270a0 | Merge branch '5.4' into 6.0 (tag: v6.0.11)
+      2022-06-27 20:24:16 | a6506e9 | Merge branch '6.0' into 6.1 (tag: v6.1.3)
+      2022-11-02 00:49:27 | ba6e553 | Use ??= more (tag: v6.2.0-RC1, tag: v6.2.0-BETA3, tag: v6.2.0)
+      2023-01-13 12:23:11 | 9b3d157 | minor #48793 Leverage arrow function syntax for closure (tigitz)
+      2023-01-25 18:30:46 | 9d12538 | [6.2] Remove mentions of v6.1 backers
+      2023-02-14 11:44:56 | c714c35 | Merge branch '5.4' into 6.2
+      2023-02-14 12:04:20 | 8d7df63 | Merge branch '6.2' into 6.3
+      2023-02-16 12:33:00 | 3f3ab88 | CS fix
+      2023-02-16 12:57:23 | 51d8f2a | Merge branch '5.4' into 6.2
+      2023-02-16 13:14:28 | fa60a09 | Merge branch '6.2' into 6.3
+      2023-02-21 19:34:40 | d4ce417 | Fix phpdocs in components (tag: v5.4.21)
+      2023-02-24 13:42:00 | 680e8a2 | Merge branch '5.4' into 6.2 (tag: v6.2.7)
+      2023-02-24 13:44:40 | e65ce5c | Merge branch '6.2' into 6.3
+      2023-03-09 19:20:02 | 75ed641 | Merge branch '5.4' into 6.2 (tag: v6.2.8)
+      2023-03-09 19:20:38 | 25e5f86 | Merge branch '6.2' into 6.3
+      2023-03-22 00:03:43 | 4d13cb8 | Replace "use-by-ref" by static vars when possible in closures
+      2023-04-18 16:56:57 | b34cdbc | Merge branch '5.4' into 6.2 (tag: v6.2.10)
+      2023-04-18 16:59:59 | 198ae32 | Merge branch '6.2' into 6.3
+      2023-05-19 10:42:48 | 97ae972 | Merge branch '5.4' into 6.2 (tag: v6.2.11)
+      2023-05-19 11:06:44 | 8741e3e | Merge branch '6.2' into 6.3 (tag: v6.3.0-RC1, tag: v6.3.0)
+      2023-07-05 11:41:27 | 02fc676 | Merge branch '6.2' into 6.3
+      2023-07-12 14:45:09 | 1a44dc3 | [PhpUnitBridge] Kill the last concurrent process when it stales for more than 60s (tag: v5.4.26)
+      2023-07-12 18:50:46 | 1603ae3 | Merge branch '5.4' into 6.2 (tag: v6.2.13, origin/6.2)
+      2023-07-12 19:00:22 | c5ce962 | Merge branch '6.2' into 6.3 (tag: v6.3.2)
+      2023-08-01 16:39:00 | ce9850f | [Process] Fix test case
+      2023-08-01 18:55:06 | d62c23a | Merge branch '5.4' into 6.3
+      2023-08-07 12:52:08 | 45261e1 | [Process] Fix silencing `wait` when using a sigchild-enabled binary (tag: v5.4.28, origin/5.4)
+      2023-08-07 13:38:32 | 0b5c291 | Merge branch '5.4' into 6.3 (HEAD -> 6.3, tag: v6.3.4, origin/HEAD, origin/6.3)
+
+Romain Neutron (83):
+      2012-08-30 14:55:38 | b10725c | Add unit test demonstrating bad exit code getter for a failing process
+      2012-08-30 16:49:05 | 9d4ac68 | Add @Seldaek remote modifications (tag: v2.1.1, tag: v2.1.0)
+      2012-08-30 23:25:16 | 4942bf3 | [Process] Normalize exceptions
+      2012-09-09 18:38:21 | c1a8adc | Add a Sigchild compatibility mode (set to false by default) (tag: v2.1.2)
+      2012-09-19 04:35:24 | d88e01b | [Process] Add output / error output incremental getters
+      2013-01-03 18:01:40 | 04ccbac | [Process] Do not reset stdout/stderr pipes on Interrupted system call
+      2013-04-06 23:28:54 | 2122c92 | Add ProcessBuilder::setPrefix method
+      2013-04-06 22:51:55 | f54332e | Fix Process timeout
+      2013-04-07 16:38:17 | 0c9f519 | Round stream_select fifth argument up.
+      2013-04-06 21:59:02 | 03a7569 | Fix timeout in Process::stop method
+      2012-09-09 18:56:43 | 850d109 | [Process] Add signal and getPid methods
+      2013-04-24 00:48:37 | 6e1fe78 | [Process] Use new ProcessUtils::escapeArgument to escape ProcessBuilder prefix
+      2013-04-24 00:53:10 | a2a22e3 | [Process] Do not throw LogicException in ProcessBuilder::getProcess if no arguments are set but a prefix is
+      2013-04-27 22:16:01 | 3b1b54a | [Process] Fix #5594 : `termsig` must be used instead of `stopsig` in exceptions when a process is signaled
+      2013-04-29 14:07:05 | 7ce1de8 | [Process] Add unit tests for #7865
+      2013-06-13 17:45:36 | 8a14b59 | [Process] Disable exception on stream_select timeout (tag: v2.2.4, tag: v2.2.3)
+      2013-06-03 05:02:46 | 723fe40 | Add possibility to use array prefixes
+      2013-08-12 16:18:24 | 7632f27 | [Process] Fix Process::checkTimeout docblock
+      2013-08-12 16:20:11 | f083ea9 | [Process] Make Process::start method chainable
+      2013-08-13 17:36:51 | 1f53601 | [Process] Fix CS
+      2013-08-13 19:56:09 | 256094b | [Process] Add failing test for #8739
+      2013-08-13 20:00:31 | 782fd91 | [Process] Fix #8739
+      2013-08-13 20:01:05 | 6f52a5c | [Process] Avoid zombie process in case of unit tests failure
+      2013-08-13 21:23:51 | f656a05 | [Process] Add more precision to Process::stop timeout
+      2013-08-13 22:21:22 | 969b619 | [Process] Fix #8742 : Signal-terminated processes are not successful
+      2013-08-14 14:09:40 | 1905282 | [Process] Fix #8746 : slowness added in unit tests since #8741
+      2013-08-14 15:29:25 | d58a1e3 | [Process] Revert change
+      2013-08-14 19:41:18 | ad85d4d | [Process] Fix for #8754 (Timed-out processes are successful)
+      2013-08-20 22:22:08 | 0ed724e | [Process] Use a consistent way to reset data of the process latest run
+      2013-09-02 12:23:35 | 5f48984 | [Process][2.2] Fix Process component on windows
+      2013-09-07 18:39:40 | f1386b0 | Fix testIdleTimeoutNotExceededWhenOutputIsSent on windows
+      2013-09-10 20:39:36 | c477a40 | [Process] Fix #8970 : read output once the process is finished, enable pipe tests on Windows
+      2013-09-11 16:13:56 | 1dbf233 | [Process] Fix process merge in 2.3
+      2013-09-11 23:09:08 | 7135793 | [Process] Close unix pipes before calling `proc_close` to avoid a deadlock
+      2013-09-16 15:32:46 | 67c4dff | [Process] Properly close pipes after a Process::stop call
+      2013-10-09 17:14:24 | 2ab8127 | [Process] Fix #9182 : random failure on pipes tests
+      2013-10-10 01:17:57 | 81191e3 | [Process] Fix latest merge from 2.2 in 2.3 (tag: v2.3.6)
+      2013-10-21 15:04:42 | f9c6196 | [Process] Fix #9343 : revert file handle usage on Windows platform (tag: v2.2.10)
+      2014-01-07 13:02:59 | 0d694d2 | [Process] Fix #9861 : Revert TTY mode
+      2014-03-10 19:55:29 | 3e733b1 | [Process] Use assertSame instead of assertEquals to avoid comparison against `null`
+      2014-03-10 20:14:59 | eb6723c | [Process] Fix process status in TTY mode
+      2014-03-11 20:00:25 | d032687 | [Process] Make process tests more accurate on exception messages
+      2014-03-11 21:32:12 | 3ab6c2d | [Process] Fix some unit tests that create the process object instead of delegate it to the implementation
+      2014-03-11 21:38:12 | 6f7f943 | [Process] Fix some unit tests that create the process object instead of delegate it to the implementation
+      2013-12-11 22:23:45 | be017d5 | [Process] Add Process::disableOutput and Process::enableOutput methods
+      2014-03-12 18:41:28 | 4114226 | [Process] Fix #9160 : escaping an argument with a trailing backslash on windows fails
+      2014-03-14 13:10:07 | 35730d7 | [Process] Add tests on ProcessUtils::escapeArgument
+      2014-03-14 19:52:09 | d64f927 | [Process] Avoid failure when calling Process::stop in edge cases
+      2014-03-14 20:03:41 | e44cc70 | [Process] Avoid failure because of a slow process
+      2014-03-14 22:08:20 | 33febe2 | [Process] Handle idle timeout and disable output conflict
+      2014-03-14 22:10:30 | 9f34844 | [Process] Increase tests speed
+      2014-03-14 20:09:12 | 6ce553c | [Process] Avoid failures because of slow IOs
+      2014-03-11 20:05:18 | 1eb5593 | [Process] Make Process::start non-blocking on Windows platform
+      2014-03-18 17:37:22 | cfff757 | [Process] Fix escaping on Windows
+      2014-03-18 19:17:31 | 02dacd6 | [Process] Trow exceptions in case a Process method is supposed to be called after termination
+      2014-03-18 22:08:52 | 02fd318 | [Process] Fix unit tests in sigchild disabled environment
+      2014-03-19 17:30:05 | ab2c2dd | [Process] Remove unreachable code + avoid skipping tests in sigchild environment
+      2014-03-31 11:31:57 | 580e44b | [Process] Fix Process test suite
+      2014-04-17 16:25:45 | 07f63d5 | [Process] Fix #10681, process are failing on Windows Server 2003
+      2014-04-22 01:11:42 | eb80393 | [Process] Setting STDIN while running should not be possible
+      2014-04-21 21:54:45 | 81946bf | [Process] Add missing docblocks, remove variable declarations
+      2014-04-23 00:38:30 | 76f0315 | [Process] Disable TTY mode on Windows platform
+      2014-05-17 21:27:19 | 2cd7d07 | [Process] Add validation on Process input (tag: v2.3.16, tag: v2.3.15, tag: v2.3.14)
+      2014-05-17 22:36:38 | ad66ae2 | [Process] Deprecate Process::setStdin in favor of Process::setInput
+      2014-05-23 00:31:58 | 5c35bcf | [Process] Fix conflicts between latest 2.3 fix and 2.5 deprecation
+      2014-05-17 21:36:35 | 5d7d78e | [Process] Deprecate using values that are not string for Process::setStdin and ProcessBuilder::setInput (tag: v2.5.0-RC1, tag: v2.5.0)
+      2014-06-11 11:56:44 | 700bbb5 | [Process] Minor README update
+      2014-06-14 16:54:26 | 6631257 | [Process] Do not redirect output to file handles when output is disabled
+      2014-04-23 01:51:46 | c1f405f | [Process] Add support for streams as input
+      2014-06-14 16:38:29 | 08fcaf4 | [Process] Reduce I/O load on Windows platform
+      2014-07-16 13:55:07 | a351f45 | [Process] Fix unit tests on Windows platform
+      2014-07-12 18:27:05 | 0cbe4de | [Process] Adjust PR #11264, make it Windows compatible and fix CS
+      2014-07-25 11:46:51 | 333e975 | [Process] Fix unit tests in sigchild environment
+      2014-11-29 14:53:35 | 122a3c3 | Add deprecation message for Process
+      2014-11-29 14:57:28 | 7334525 | [Process] Remove deprecated methods
+      2016-01-18 20:32:04 | caace69 | [Process] Fix typo, no arguments needed anymore
+      2016-01-18 19:23:05 | 777f820 | [Process] Use stream based storage to avoid memory issues
+      2016-01-18 20:27:18 | 32c0f5e | [Process] Allow a callback whenever the output is disabled
+      2016-01-18 19:23:05 | 3db2f00 | [Process] Use stream based storage to avoid memory issues
+      2016-03-05 02:21:22 | db66eb9 | [Process] Fix memory issue when using large input streams
+      2016-03-05 18:49:11 | c423e42 | [Process] getIncrementalOutput should work without calling getOutput
+      2017-02-28 17:54:44 | 2b383c8 | [master] Fix issues reported by static analyse
+      2017-12-20 17:36:51 | ab61e70 | [2.7][DX] Use constant message contextualisation for deprecations
+
+Alexander M. Turek (40):
+      2019-05-30 17:56:20 | d129c01 | Use willReturn() instead of will(returnValue()). (tag: v3.4.30, tag: v3.4.29)
+      2019-08-16 03:25:14 | def2e16 | Fix some docblocks.
+      2019-08-18 12:12:38 | 60838d6 | [Process] Doc block backport.
+      2019-08-18 12:18:30 | b856d8b | [Process] Added missing return type.
+      2019-08-20 00:30:37 | 5179b12 | Fix inconsistent return points.
+      2019-08-20 00:30:37 | 1931081 | Fix inconsistent return points.
+      2019-08-14 02:26:41 | e5d7900 | Added more parameter type declarations.
+      2019-09-25 17:09:38 | 344dc58 | Fix return type of Process::restart(). (tag: v3.4.32)
+      2019-09-25 13:08:54 | 5ec7407 | Add types to constructors and private/final/internal methods (Batch II)
+      2020-05-23 22:47:49 | 3bc410c | [Process] Fix failing test on php 8.
+      2020-10-28 10:52:32 | a537922 | Use short array deconstruction syntax.
+      2020-10-29 00:31:18 | 74693ef | Merge branch '4.4' into 5.1
+      2020-10-29 00:46:03 | dfc439a | Merge branch '5.1' into 5.x
+      2020-12-27 02:49:32 | a2f01c9 | CS: Apply ternary_to_null_coalescing fixer
+      2020-12-27 16:02:18 | 0855a1d | Merge branch '4.4' into 5.1
+      2020-12-27 16:15:00 | 1455438 | Merge branch '5.1' into 5.2
+      2021-06-07 02:15:42 | af75ea2 | Leverage str_contains/str_starts_with
+      2021-07-26 16:29:22 | 13d3161 | Fix return types for PHP 8.1 (tag: v4.4.30)
+      2021-08-05 00:20:46 | 38f26c7 | Merge branch '4.4' into 5.3 (tag: v5.3.7)
+      2021-08-05 00:30:37 | 26416cc | Merge branch '5.4' into 6.0
+      2021-08-05 01:33:39 | d5052fc | Remove ReturnTypeWillChange
+      2021-11-03 12:24:47 | 6bacc79 | Add generic types to traversable implementations
+      2021-11-03 16:44:55 | 652b570 | Merge branch '5.4' into 6.0
+      2021-11-04 19:37:19 | 668ff7f | Merge branch '4.4' into 5.3
+      2021-11-04 19:42:31 | cbdd4cd | Merge branch '5.3' into 5.4 (tag: v5.4.0-BETA1)
+      2021-11-04 20:12:40 | 6b208c9 | Merge branch '5.4' into 6.0 (tag: v6.0.0-BETA1)
+      2021-12-11 18:33:46 | bae6f53 | Merge branch '4.4' into 5.3
+      2021-12-11 19:33:38 | bf0e245 | Merge branch '5.3' into 5.4
+      2021-12-11 19:36:28 | b02749b | Merge branch '5.4' into 6.0
+      2021-12-13 18:44:47 | 31d7ad3 | Make use of the nullsafe operator
+      2021-12-28 00:00:39 | bcd167b | Merge branch '4.4' into 5.3 (tag: v5.3.13)
+      2021-12-28 00:01:00 | 2b3ba87 | Merge branch '5.3' into 5.4 (tag: v5.4.2)
+      2021-12-28 00:05:08 | 71da2b7 | Merge branch '5.4' into 6.0 (tag: v6.0.2)
+      2021-12-28 00:05:40 | ef68415 | Merge branch '6.0' into 6.1
+      2022-01-30 21:16:22 | 9544040 | Merge branch '4.4' into 5.4 (tag: v5.4.5)
+      2022-01-30 21:19:12 | 1cccecc | Merge branch '5.4' into 6.0 (tag: v6.0.5)
+      2022-01-30 21:20:25 | 42eca5c | Merge branch '6.0' into 6.1
+      2022-03-13 23:07:29 | ca5bdf2 | Merge branch '4.4' into 5.4
+      2022-03-13 23:10:05 | 2981278 | Merge branch '5.4' into 6.0
+      2022-03-13 23:11:47 | 6f576dc | Merge branch '6.0' into 6.1
+
+Jordi Boggiano (28):
+      2010-12-21 05:59:17 | 66903a7 | CS: Unified strict equality comparisons, put var on the right side
+      2012-02-16 19:37:52 | 97cd996 | [Process] Code clean up
+      2012-02-16 19:38:35 | b9646ba | [Process] Add ProcessBuilder::create() for more fluidity in the interface until 5.4
+      2012-02-16 19:46:57 | 3d91a72 | [Process] Always escape commands properly and remove windows-specific handling
+      2012-02-16 22:16:07 | b4bfbdc | [Process] Add windows compatibility to Process component
+      2012-02-22 17:10:14 | 232fb3c | Fix env inheritance and added tests
+      2012-02-22 17:19:04 | 1d11013 | Restore bypass_shell by default with windows compat
+      2012-02-22 17:38:43 | e94c649 | Feedback fixes
+      2012-02-25 06:26:20 | 0c6cf2e | Add branch-alias for composer
+      2012-02-27 12:59:20 | 6aceac4 | Removed version field
+      2012-03-18 16:07:34 | d08c4ea | [Process] Fix command escaping
+      2012-04-08 22:26:04 | b5b6fe6 | [Process] Fix a mistake triggering stream_select errors
+      2012-04-08 22:26:27 | abece34 | [Process] Removing useless code (this is already done in updateStatus)
+      2012-04-08 22:27:37 | c95f886 | [Process] Close pipes before calling proc_close to avoid deadlocks as advised on the proc_close php.net documentation
+      2012-04-08 22:28:28 | d3043dd | [Process] Skip test that is still getting stuck on windows
+      2012-04-08 22:29:02 | 6564115 | [Process] Skip signal assertion on windows
+      2012-04-27 14:47:50 | 2535ab9 | Update branch aliases
+      2012-05-24 21:52:29 | a13939a | [Process] Add failing test for callbacks on windows
+      2012-05-24 21:53:48 | f4f101f | [Process] Refactor the windows handling so it is always executed
+      2012-07-03 20:19:03 | 0995610 | [Process] Add extra dirs argument to the executable finder to allow searching more dirs
+      2012-07-03 20:19:31 | 9c35e1e | [Process] Clean-up/simplify code
+      2012-07-03 20:50:27 | abbb6c9 | [Process] Add default xampp path to the list of possible paths to check
+      2012-08-26 17:13:51 | 86c20b9 | [Process] Add workaround for PHP's internal sigchild failing to return proper exit codes
+      2013-02-14 15:11:15 | 9543ba6 | [Process] Warn user with a useful message when tmpfile() failed
+      2013-02-17 23:36:23 | 7d92786 | [Process] Fix regression introduced in #6620 / 880da01c49a9255f5022ab7e18bca38c18f56370, fixes #7082 (tag: v2.0.25, tag: v2.0.24, tag: v2.0.23, origin/2.0)
+      2013-04-25 17:23:11 | d55770a | [Process] Fix tests on windows
+      2014-02-18 16:56:35 | 53fd872 | Bypass sigchild detection if phpinfo is not available
+      2022-01-21 17:28:20 | 96532c9 | [Process] Avoid calling fclose on an already closed resource
+
+Christian Flothmann (26):
+      2014-07-06 19:05:33 | 78f1e56 | add missing docblock for ProcessBuilder::addEnvironmentVariables()
+      2014-07-06 19:10:45 | 9fce32e | fix the return types
+      2014-07-22 20:04:22 | 7ef9894 | [Process] fix signal handling in wait()
+      2014-08-28 13:02:24 | b8fc0e4 | fix some minor typos in tests (tag: v2.3.19)
+      2014-08-28 20:24:17 | 3e6ff66 | fix mustRun() in sigchild environments
+      2014-09-03 21:33:24 | 8ee145f | add missing exceptions to docblock
+      2014-12-29 15:05:07 | b618039 | use value of DIRECTORY_SEPARATOR to detect Windows
+      2014-12-29 15:11:25 | cfdf101 | use PHP_WINDOWS_VERSION_BUILD to detect Windows
+      2014-12-29 15:15:05 | 8ad191c | use value of DIRECTORY_SEPARATOR to detect Windows
+      2015-01-04 17:17:53 | 6929d8d | add missing param names to @param annotation (tag: v2.3.24)
+      2015-05-01 17:06:45 | a8fe947 | link to https://symfony.com where possible (tag: v2.3.28)
+      2016-03-17 14:37:14 | 19beeea | [Process] fix docblock syntax (tag: v2.7.11)
+      2016-09-28 21:06:48 | e134ba5 | silent file operation to avoid open basedir issues (tag: v2.7.21, tag: v2.7.20, tag: v2.7.19)
+      2017-04-12 09:19:06 | ace466e | fail when detecting risky tests (tag: v2.7.29, tag: v2.7.28, tag: v2.7.27)
+      2017-06-26 10:22:52 | 8bdb547 | [Process] remove deprecated features
+      2017-10-06 12:34:09 | d111ff7 | Merge branch '3.4'
+      2017-10-06 19:17:48 | 729f0f7 | drop non-existent working directory support (tag: v4.0.0-BETA1)
+      2017-12-08 10:44:44 | 124a087 | add type hint and changelog entry
+      2018-01-10 14:30:01 | 6588387 | Merge branch '3.3' into 3.4
+      2018-01-10 14:36:17 | b347e96 | Merge branch '3.4' into 4.0
+      2018-01-10 22:03:03 | d34b43a | Merge branch '4.0'
+      2019-01-01 16:42:07 | dbbe56c | update year in license files
+      2019-01-03 12:05:57 | 5bcfa3a | Merge branch '3.4' into 4.1 (tag: v4.1.10)
+      2019-01-03 12:07:35 | ebb5d1a | Merge branch '4.1' into 4.2
+      2019-01-03 12:16:58 | 21eb923 | Merge branch '4.2'
+      2019-07-19 11:49:41 | 980c104 | remove deprecated inheritEnvironmentVariables() method
+
+Christophe Coevoet (17):
+      2014-12-30 01:41:34 | 2141b25 | Fix phpdoc and coding standards
+      2015-12-05 14:06:38 | bcf18c0 | Merge branch '2.3' into 2.7
+      2015-12-05 14:09:21 | feb83ae | Merge branch '2.7' into 2.8
+      2015-12-05 14:13:14 | 2c0a0a0 | Merge branch '2.8' into 3.0
+      2015-12-05 14:13:35 | 5c710b6 | Merge branch '3.0'
+      2015-12-05 18:09:16 | 0a0dbef | minor #16813 [Process] Fix stopping a process on Windows (nicolas-grekas)
+      2015-12-05 20:37:09 | efba4f5 | Merge branch '2.3' into 2.7
+      2015-12-05 20:37:59 | e0ffef5 | Merge branch '2.7' into 2.8
+      2015-12-05 20:45:07 | 2cc5b05 | Merge branch '2.8' into 3.0
+      2015-12-05 20:45:25 | 792b260 | Merge branch '3.0'
+      2015-12-05 21:10:05 | 66eaba6 | Fix the exception message expectation
+      2015-12-05 21:11:45 | 7c4b34f | Merge branch '2.7' into 2.8
+      2015-12-05 21:14:16 | 218e517 | Merge branch '2.8' into 3.0
+      2015-12-05 21:15:19 | 345e425 | Merge branch '3.0'
+      2018-07-09 12:01:07 | f741672 | Fix the detection of the Process new argument (tag: v3.4.13)
+      2018-07-24 10:48:17 | 00507de | Apply fixers
+      2018-07-05 14:24:53 | 6720df4 | Enable the fixer enforcing fully-qualified calls for compiler-optimized functions
+
+Tobias Schultze (15):
+      2012-04-23 15:43:49 | 45356d0 | fix typo
+      2012-04-24 16:28:42 | 3f95a01 | put parentheses back
+      2013-11-08 04:33:52 | f4fadb8 | [Process] fix phpdoc and timeout of 0
+      2013-11-10 21:06:47 | b058874 | unify constructor initialization style throughout symfony
+      2013-11-20 06:35:05 | 72ea08b | unify and fix callable phpdoc throughout symfony
+      2014-01-21 13:48:43 | 597b921 | [Process] clarify idle timeout
+      2014-03-19 00:00:58 | f8c4aa3 | [Process] fix some typos and refactor some code
+      2014-06-20 23:32:40 | 4b00065 | Use PSR-4 everywhere instead of PSR-0
+      2015-09-28 19:58:12 | 35f3062 | remove api tags from code
+      2015-09-29 15:06:14 | fe952d3 | Merge branch '2.3' into 2.7
+      2015-09-29 15:32:55 | 6f73f6b | Merge branch '2.7' into 2.8
+      2015-09-29 17:08:28 | 092ce69 | Merge branch '2.8'
+      2015-10-04 18:55:43 | 68fff35 | Merge branch '2.7' into 2.8
+      2019-08-08 17:01:55 | 5a985ac | cleanup remaining param  and internal Intl FulLTransformer
+      2020-03-26 00:25:16 | 3e40e87 | add missing gitattributes for phpunit-bridge (tag: v4.4.7)
+
+Johannes M. Schmitt (10):
+      2011-04-08 14:07:31 | d1dcdfa | [Process][Assetic] refactored some code to allow for better executable defaults
+      2011-04-08 16:27:03 | 8adce9c | [Process] use component exception
+      2011-09-15 18:10:00 | d7d1f1d | [Process] workaround a faulty implementation of is_executable on Windows
+      2012-03-19 07:51:13 | fb25e32 | added an exception for failed processes
+      2013-01-12 14:09:29 | 8582fc2 | fixes a bug when output/error output contains a % character
+      2013-08-02 23:20:26 | fb8ca19 | adds ability to define an idle timeout
+      2013-08-03 11:10:03 | 8f8dfd2 | adds support for PTY mode
+      2013-08-03 11:24:32 | fa70062 | adds convenience method mustRun
+      2013-08-03 11:57:35 | c1bef54 | attempts to fix tests on Travis
+      2013-08-03 18:52:29 | 8132515 | adds cache for isPtySupported()
+
+Pascal Borreli (9):
+      2011-03-28 00:27:03 | 4776b4c | [Process] Removed useless getenv
+      2011-03-28 00:30:21 | 724ec9d | [Process] Better guess of php bin executable path
+      2011-04-09 21:31:26 | e1e3e59 | [Process][Windows] Don't use cmd for launching process (fixing Sismo git.exe calling)
+      2011-05-22 18:57:37 | a003d06 | [Process] Fixed namespace typo and windows test
+      2012-07-28 20:07:17 | 8d931b8 | Fixed Phpdoc
+      2012-07-29 02:02:29 | 7278cfe | Fixed typos
+      2012-12-15 02:27:02 | 30993c3 | Fixed typos
+      2013-08-24 10:54:37 | 749fe18 | Fixed typos
+      2013-11-06 00:41:03 | 468ca4d | Fixed typos
+
+Grégoire Pineau (8):
+      2012-09-22 05:03:15 | 4065973 | [Process][Tests] Prove process fail
+      2012-09-25 12:21:47 | eaf8f39 | [Process][Tests] Prove process fail (Add more test case)
+      2012-09-25 17:37:18 | f43a123 | [Process] Fixed bug introduced by 7bafc69f38a3512eb15aad506959a4e7be162e52.
+      2013-06-04 15:54:31 | b5bc84c | [Process] Added ProcessBuilder::addEnvironmentVariables
+      2017-07-13 15:40:01 | 0743280 | [Process] Fixed issue between process builder and exec (tag: v3.3.6, tag: v3.3.5)
+      2017-10-02 12:08:26 | a8aac57 | [Process] Removed dead code in the start method
+      2019-04-01 16:29:45 | 483b38f | [Process] Added more detail to the exception when the CWD is invalid
+      2022-08-25 17:59:21 | 00db88f | [CS] Remove @inheritdoc PHPDoc (tag: v6.2.0-BETA1)
+
+Bernhard Schussek (7):
+      2013-01-05 21:52:40 | 5c10de4 | Fixed @expectedException definitions to reference absolute exception paths
+      2013-10-30 16:27:00 | 82f8588 | [Process] Renamed flushOutput() and flushErrorOutput() to clearOutput() and clearErrorOutput()
+      2014-08-04 14:16:36 | 5f4df90 | Merge branch '2.3' into 2.4
+      2014-08-05 13:00:40 | e0997d2 | Merge branch '2.4' into 2.5 (tag: v2.5.3)
+      2014-08-05 13:07:51 | b21c57c | Merge branch '2.5'
+      2014-08-05 13:52:34 | 23a58ae | [Process] Added process synchronization to the incremental output tests
+      2014-08-14 20:37:29 | ba2c477 | Merge branch '2.5'
+
+Jérémy Derussé (7):
+      2019-08-01 10:31:22 | df06f4e | Fix assertInternalType deprecation in phpunit 9
+      2019-08-01 17:27:42 | f1b06cb | Replace calls to setExpectedException by Pollyfill
+      2019-08-02 01:48:42 | 294250e | Fix deprecated phpunit annotation
+      2019-08-02 20:02:27 | 9708054 | Remove use of ForwardCompatTrait
+      2019-08-06 01:37:40 | 348bfd4 | Use assertStringContainsString when needed
+      2019-08-08 12:17:10 | ea4c73d | Disable phpunit typehint patch on 4.3 branch
+      2020-12-12 18:46:18 | 89b55cb | Dont allow unserializing classes with a destructor
+
+Dany Maillard (5):
+      2017-07-04 12:20:25 | dd6d322 | Remove enhancement Windows compatibility
+      2017-07-04 20:44:25 | 9528d03 | Add some meta infos
+      2017-07-04 14:07:48 | bc7a7b9 | Remove enhance sigchild compatibility
+      2018-08-29 00:39:52 | 0fcf4e0 | Fix code examples in PHPDoc
+      2018-08-29 02:20:27 | 3a173ff | Add relative path support for PHP_BINARY env var of PhpExecutableFinder
+
+Jakub Zalas (5):
+      2012-12-30 16:18:39 | cbba493 | [Process] Prevented test from failing when pcntl extension is not enabled.
+      2013-01-11 04:31:43 | 43ccd3a | Removed underscores from test method names to be consistent with other components.
+      2013-08-03 01:51:01 | dd780ac | [Process] Increased the timeout in a test to prevent random failures when travis is under a heavy load. (tag: v2.3.3)
+      2014-08-01 01:38:34 | c2f0528 | [Process] Fix tests when pcntl is not available.
+      2016-01-19 19:31:40 | afbb450 | [Process] Remove a misleading comment
+
+Robin Chalas (5):
+      2016-11-22 23:44:12 | 8bf0996 | [Process] Fix kill process on reached timeout using getIterator()
+      2017-12-30 22:20:05 | a0733fc | Remove dead code
+      2019-01-04 18:14:53 | 474b4bc | Merge branch '4.2'
+      2021-04-08 13:27:02 | 98cb8ee | Merge branch '4.4' into 5.2 (tag: v5.3.0-RC1, tag: v5.3.0-BETA1, tag: v5.2.7)
+      2021-10-11 19:08:10 | df3e89e | Merge branch '5.4' into 6.0
+
+Thomas Calvet (5):
+      2019-10-24 15:44:17 | c19da50 | Remove unused local variables in tests (tag: v3.4.35, tag: v3.4.34, tag: v3.4.33)
+      2020-07-16 12:17:05 | af8d812 | [SCA] Minor fixes on tests (tag: v3.4.44, tag: v3.4.43)
+      2021-04-07 19:12:22 | f5481b2 | [PHPDoc] Fix some union type cases (tag: v4.4.22)
+      2022-02-15 18:42:18 | d5aec60 | Leverage the match expression
+      2022-03-08 20:16:11 | 7489e29 | [Process] Don't return executable directories in PhpExecutableFinder
+
+Wouter de Jong (5):
+      2023-02-13 02:00:11 | 01e6198 | Add missing PHPdoc return types
+      2023-02-13 02:00:27 | b040da6 | Add PHP types to private methods and functions
+      2023-02-13 01:57:18 | ae2af87 | Add void return types
+      2023-04-23 00:52:28 | 39cbf15 | Add remaining missing return types to safe methods
+      2023-04-28 15:21:20 | 89ac295 | Add missing return types (tag: v6.3.0-BETA1)
+
+Ben (4):
+      2014-07-20 03:29:08 | cf09eaf | [Process] Fixes issue #11421
+      2014-07-20 03:48:53 | ee25ea4 | [Process] Add test to verify fix for issue #11421
+      2014-07-21 08:50:55 | 48d0d9d | Bring code into standard
+      2015-10-09 18:32:35 | 5571a0c | [Process] Workaround buggy PHP warning
+
+Florin Patan (4):
+      2011-05-23 16:54:22 | 4b26e90 | Fix problem with searching files while the open_basedir is in use
+      2011-06-14 21:36:01 | b9cbac8 | Executable Finder will now try to match if a file is already in the open_basedir list before searching it thru that list
+      2011-06-14 22:05:40 | a6acc9a | fixed CS and unsude variable (PR #1319)
+      2012-12-16 16:02:54 | 284d8cd | Fixed most of the docblocks/unused namespaces
+
+Graham Campbell (4):
+      2014-11-30 16:33:44 | 5096b27 | Docblock fixes (tag: v2.3.23)
+      2014-12-04 23:26:11 | fbdff9a | CS fixes
+      2014-12-05 23:11:30 | 38d35e5 | [2.6] CS Fixes And Removed An Unused Import
+      2014-12-21 20:00:50 | b5fc125 | [2.3] CS And DocBlock Fixes
+
+Joseph Bielawski (4):
+      2012-04-12 12:09:52 | 9f49693 | [Tests] Use proper assertions
+      2013-01-08 16:27:17 | 0ed3a0b | [Process] In edge cases `getcwd()` can return `false`, then `proc_open()` should get `null` to use default value (the working dir of the current PHP process) (tag: v2.0.22)
+      2013-01-08 23:11:30 | fa405bd | [Process] Fix docblocks, remove `return` from `PhpProcess#start()` as parent returns nothing, cleaned up `ExecutableFinder`
+      2013-05-06 13:50:13 | be3cac4 | [Process] Cleanup tests & prevent assertion that kills randomly Travis-CI (tag: v2.1.13, tag: v2.1.12, tag: v2.1.11, tag: v2.1.10, origin/2.1)
+
+Kris Wallsmith (4):
+      2010-09-09 02:11:37 | 4bea43f | [Process] made cwd argument optional
+      2010-10-17 15:45:15 | 95be0da | Removed all those spaces after @author that were bothering me so…
+      2011-04-26 18:45:16 | 4dd76c6 | [Process] added optional argument for default executable
+      2011-12-16 18:41:31 | eb0f176 | [Process] added ProcessBuilder
+
+Mikael Pajunen (4):
+      2015-01-01 16:52:57 | 655ecad | [Process] Removed unused variable assignment
+      2015-01-01 17:36:27 | e011f92 | [Process] Added a test skip check for Windows
+      2015-01-02 19:12:15 | 7585ce0 | Use PHPUnit ini_set wrapper in tests
+      2015-01-07 01:47:52 | 319794f | [Process] Fix input reset in WindowsPipes (tag: v2.6.3, tag: v2.6.2)
+
+Oskar Stark (4):
+      2017-09-28 09:42:58 | 1d00d2e | removed useless PHPDoc
+      2021-01-22 15:09:22 | 7e950b6 | Use createMock() and use import instead of FQCN (tag: v4.4.20, tag: v4.4.19)
+      2021-05-26 14:20:16 | cd61e6d | Fix markdown (tag: v4.4.25)
+      2022-12-14 17:42:16 | 4019350 | Migrate to `static` data providers using `rector/rector`
+
+Vladimir Reznichenko (4):
+      2015-05-29 20:14:48 | 0aefe19 | Php Inspections (EA Extended):     - resolved possible PHP Fatal in \Symfony\Component\BrowserKit\Cookie::__toString     -resolved implicit magic methods calls     -resolved callable name case mismatches
+      2015-06-06 09:25:15 | ef923e8 | [2.3] Static Code Analysis for Components
+      2017-03-03 19:35:37 | 9974b5b | Static code analysis with Php Inspections (EA Extended): dead code dropped, couple bugs fixed (tag: v2.7.26, tag: v2.7.25)
+      2018-11-07 18:12:26 | a7965ee | SCA: use 'yield from' where it does make sense
+
+sarah khalil (4):
+      2014-12-18 22:00:19 | de1a4e2 | [Tests] Silenced all deprecations in tests for 2.3
+      2015-01-21 22:48:04 | d454aac | Removed dead code and various cleaning (tag: v2.3.25)
+      2015-01-21 00:49:28 | e42521d | Removed dead code and various cleaning
+      2015-03-11 21:52:02 | 3538969 | Changed visibility of setUp() and tearDown to protected (tag: v2.3.26)
+
+Adrian Rudnik (3):
+      2011-05-13 04:22:14 | d3a26fa | Fixed wrong descriptor mode for stderr
+      2011-05-13 05:08:55 | d8fff79 | [Process] Wrong descriptor mode for stderr
+      2011-05-14 19:25:55 | b9049a3 | [Process] Workaround for windows based stderr bug
+
+Christoph (3):
+      2012-10-06 08:39:50 | b4065b2 | added doc comments
+      2012-10-06 08:44:21 | 5d06a50 | added doc comments
+      2012-10-06 16:46:45 | 534f839 | fixed CS (tag: v2.0.21, tag: v2.0.20, tag: v2.0.19, tag: v2.0.18)
+
+Gabriel Ostrolucký (3):
+      2018-03-29 00:15:25 | 9329b22 | Mark ExceptionInterfaces throwable
+      2018-03-29 00:15:25 | 995a510 | Mark ExceptionInterfaces throwable
+      2018-11-25 04:27:51 | 30378e3 | Optimize perf by replacing call_user_func with dynamic vars
+
+Martin Hasoň (3):
+      2012-12-06 12:03:32 | 058ae50 | Removed useless branch alias for dev-master in composer.json
+      2013-01-18 16:53:35 | 28cdd4b | [Process] Added ProcessUtils::escapeArgument() to fix the bug in escapeshellarg() function on Windows
+      2013-07-16 14:31:14 | 8ac46d2 | Added missing files .gitignore
+
+Samuel ROZE (3):
+      2017-10-11 15:06:43 | 1e632fa | [Process] Fix broken tests for PHP 7.2
+      2018-09-02 20:33:37 | 8d3d0c0 | Merge branch '3.4' into 4.1
+      2018-09-02 20:48:09 | d908dbd | Merge branch '4.1'
+
+boombatower (3):
+      2012-09-08 01:36:28 | de4e795 | [Process] change all  documentation type to callable
+      2012-09-07 11:03:48 | 20ea4e9 | [process] provide a restart method.
+      2012-09-07 10:42:13 | 8503098 | [process] expose the process status.
+
+maryo (3):
+      2017-04-27 16:12:46 | 6edff1f | [Process] Ecaping of CLI arguments containing slashes on Windows (tag: v3.3.0-BETA1)
+      2017-05-02 21:15:06 | ec056df | Fix incorrectly calling PHP process on Windows when path contains space (tag: v3.3.0-RC1)
+      2017-05-02 21:18:44 | 8e30690 | [Process] Fixed incorrectly escaping arguments on Windows when inheritEnvironmentVariables is set to false (tag: v3.3.2, tag: v3.3.1, tag: v3.3.0)
+
+Amrouche Hamza (2):
+      2017-10-31 09:00:43 | 4314a1e | [Process] Allow writing portable "prepared" command lines
+      2017-10-31 09:00:43 | c89a858 | [Process] Allow writing portable "prepared" command lines
+
+Andreas Möller (2):
+      2018-12-27 21:08:15 | bcbb0ec | Fix: Method can also return null
+      2019-01-03 00:24:08 | 0d41dd7 | Fix: Adjust DocBlock (tag: v3.4.21)
+
+Andrej Hudec (2):
+      2012-04-22 23:52:08 | 108c046 | fix hanging of unit tests on Windows
+      2012-04-23 02:05:10 | bb80507 | fix php5.4 problem
+
+Ben Johnson (2):
+      2016-08-04 20:11:16 | df000f3 | Workaround another buggy PHP warning
+      2018-05-03 19:50:56 | a6d452f | Suppress warnings when open_basedir is non-empty
+
+Chris Smith (2):
+      2012-07-18 21:20:44 | ae0635c | [Process] Fixed a problem on RHEL5 where the exit code was incorrect
+      2014-06-20 11:36:55 | dbbf455 | [Process] Fix ExecutableFinder with open basedir
+
+Christian Raue (2):
+      2014-07-06 13:04:43 | 50f9e5c | added XSD to PHPUnit configuration (tag: v2.3.17)
+      2014-07-07 14:13:42 | 6e70dd4 | removed defaults from PHPUnit configuration (tag: v2.3.18)
+
+Dariusz Ruminski (2):
+      2015-03-21 13:51:07 | 55d3cb3 | CS: Convert double quotes to single quotes
+      2015-04-22 10:13:42 | e31cf55 | CS: unalign =
+
+David Prévot (2):
+      2023-07-01 21:52:48 | 4525b60 | Fix executable bit
+      2023-07-01 21:52:48 | 86ca4c7 | Fix executable bit
+
+Diego Saint Esteben (2):
+      2015-04-01 01:33:31 | 5ce4fe0 | Removed deprecations in Process component
+      2016-01-02 03:11:38 | 7b358aa | Update copyright year
+
+Filippo Tessarotto (2):
+      2012-09-28 11:34:16 | 5484de9 | Optimize autoload prefix in composer.json
+      2015-12-02 12:09:02 | 7bd4afc | [Process] Unset callback after stop to free memory
+
+Gabriel Caruso (2):
+      2017-12-12 00:55:31 | 694553c | Refactoring tests.
+      2018-10-02 06:12:00 | 3c7e102 | [CS] Enforces null type hint on last position in phpDocs
+
+Gregor Harlan (2):
+      2015-03-31 02:07:44 | 1e6f776 | CS: Pre incrementation/decrementation should be used if possible
+      2015-12-21 14:01:57 | ab82a2b | use nowdoc instead of heredoc
+
+Grégoire Paris (2):
+      2018-11-11 14:11:22 | c3591a0 | Bump phpunit XSD version to 5.2 (tag: v2.8.52, tag: v2.8.50, tag: v2.8.49, tag: v2.8.48, origin/2.8)
+      2019-01-03 01:07:49 | ea043ab | Do not risk waiting 100 seconds (tag: v4.2.2)
+
+Hugo Hamon (2):
+      2014-12-21 14:39:54 | fa59dfc | Adds deprecation notices for structures to be removed in 3.0.
+      2014-12-30 02:26:56 | ddb9c66 | Normalized @deprecated annotations.
+
+Igor Wiedler (2):
+      2011-09-24 21:13:35 | dd11492 | [composer] add composer.json (tag: v2.0.4)
+      2012-10-04 19:17:57 | 2965a03 | [2.1] Exclude tests from zips via gitattributes
+
+Karoly Gossler (2):
+      2019-08-09 16:40:51 | 6a848c8 | added `Process::getLastOutputTime()` method
+      2019-08-09 16:40:51 | b846a9f | added `Process::getLastOutputTime()` method
+
+Kévin Dunglas (2):
+      2017-12-31 15:09:44 | 6473e56 | Update LICENSE year... forever
+      2018-03-21 22:07:03 | d3f513c | [Process] Remove a useless cast
+
+Nyholm (2):
+      2019-09-05 18:26:55 | 8258405 | Adding .gitattributes to remove Tests directory from "dist"
+      2020-11-01 22:26:06 | ec1482f | [Process] Dont test TTY if there is no TTY support (tag: v4.4.17)
+
+Peter Rehm (2):
+      2017-02-08 10:24:27 | 144acc8 | Update to PHPUnit namespaces
+      2017-02-20 17:23:32 | 87bb726 | Further refactorings to PHPUnit namespaces
+
+Philippe Segatori (2):
+      2019-06-29 01:45:38 | 308af67 | [Process] [5.0] Replace docblocks by type-hints
+      2019-08-13 23:27:05 | 8f99ff4 | Remove superfluous phpdoc tags
+
+Pierre du Plessis (2):
+      2015-10-03 01:45:21 | b75de9e | Throw exception if tempnam returns false
+      2015-10-04 18:06:43 | b477d11 | Throw exception if tempnam returns false in ProcessPipes
+
+Saro0h (2):
+      2014-12-04 01:04:33 | f45113b | Removed all $that variables
+      2015-01-01 03:12:43 | 3644f0a | Updated copyright to 2015
+
+SpacePossum (2):
+      2017-09-07 12:04:22 | efb49ae | [CS][2.7] yoda_style, no_unneeded_curly_braces, no_unneeded_final_method, semicolon_after_instruction
+      2018-09-06 20:11:15 | f09e21b | fix fopen calls (tag: v2.8.46)
+
+Valentin (2):
+      2018-10-14 20:33:21 | 35c2914 | Add a test case for stringifying of Process arguments (tag: v3.4.18)
+      2018-10-14 23:07:30 | 3e83ace | Remove Process::escapeArgument argument type hint (tag: v4.1.7)
+
+William DURAND (2):
+      2012-04-27 17:21:31 | 3247811 | [Components] Tests/Autoloading fixes
+      2012-08-22 17:48:41 | ce83a65 | Add minimum-stability (dev) in each component
+
+drak3 (2):
+      2012-03-21 20:58:02 | 3523cab | [Process] Added support for non-blocking process control Added methods to control long running processes to the Process class:  - A non blocking start method to startup a process and return    immediately  - A blocking waitForTermination method to wait for the processes    termination  - A stop method to stop a process started with start All status-getters like getOutput were changed to return real-time data
+      2012-03-23 15:06:08 | a112f8b | fixed cs
+
+ogizanagi (2):
+      2015-11-20 01:03:24 | 63573e0 | [Process] PhpExecutableFinder: add regression test
+      2015-11-27 15:30:14 | 42a5fd3 | [Process] Remove PHP_BINARY existence check
+
+stealth35 (2):
+      2012-03-02 17:33:12 | 0e077b4 | [Process] PHP_BINARY return the current process
+      2012-03-02 19:42:35 | b930a53 | Only work with the cli sapi (tag: v2.0.14, tag: v2.0.13, tag: v2.0.12)
+
+Aaron Stephens (1):
+      2014-01-28 20:56:56 | 69ccad4 | Fixed data in pipe being truncated if not read before process termination
+
+Abdellatif Ait boudad (1):
+      2015-07-01 17:16:54 | 25d74c9 | Merge remote-tracking branch 'origin/2.7' into 2.8
+
+Ahmed (1):
+      2019-11-25 21:09:41 | 4e98a87 | [Process] add tests for php executable finder if file does not exist
+
+Alex Bowers (1):
+      2017-07-29 00:09:12 | e146aa7 | Added deprecation to cwd not existing Fixes #18249
+
+Alex Pott (1):
+      2020-07-05 04:19:18 | a39907a | Use ">=" for the "php" requirement
+
+Alexander (1):
+      2012-10-28 19:19:50 | e0dc473 | [Process] Add ability to reset arguments on ProcessBuilder
+
+Alexandre Daubois (1):
+      2023-03-06 23:48:01 | 4b850da | [Tests] Replace `setMethods()` by `onlyMethods()` and `addMethods()` (tag: v5.4.22)
+
+Alexey Kopytko (1):
+      2018-05-18 12:18:34 | 0b79e6d | [Process] Consider \"executable\" suffixes first on Windows
+
+Andreas Frömer (1):
+      2017-12-22 18:28:45 | bf34b29 | Add type string to docblock for Process::setInput()
+
+Andrei O (1):
+      2020-07-08 00:04:30 | a9bb93b | [Process] allow setting options esp. "create_new_console" to detach a subprocess
+
+Andrey Ryaguzov (1):
+      2014-02-21 11:41:38 | f5eab0c | [Process] minor fixes (tag: v2.3.11)
+
+Anne-Sophie Bachelard (1):
+      2015-10-30 22:48:51 | 5a36fee | added the new Composer exclude-from-classmap option
+
+Arman Hosseini (1):
+      2019-07-29 20:25:29 | cddcf9b | Improve some URLs
+
+Bailey Parker (1):
+      2014-12-31 03:27:17 | e599236 | Fixes Issue #13184 - incremental output getters now return empty strings
+
+Baptiste Clavié (1):
+      2014-03-25 19:03:53 | 0db8c1a | When a process fails, check if the output is enabled
+
+Benhssaein Youssef (1):
+      2020-01-08 18:02:14 | 61ab103 | [Process] - update @throws phpdoc (tag: v4.3.11, tag: v4.3.10, origin/4.3)
+
+Benjamin Morel (1):
+      2020-03-19 15:25:45 | 1dbc09f | Prevent warning in proc_open() (tag: v3.4.39)
+
+Bilge (1):
+      2017-02-14 19:41:18 | 9b244e5 | Permit empty suffix on Windows
+
+BilgeXA (1):
+      2012-09-16 07:07:09 | 9738a17 | Fluent interface
+
+Chris McGehee (1):
+      2022-01-27 07:05:53 | b2d924e | [Process] Update PHPDoc to use proper placeholder syntax (tag: v4.4.37)
+
+Christian (1):
+      2013-08-11 23:20:34 | d2c1273 | always manually inherit $_SERVER
+
+Christian Gärtner (1):
+      2013-08-30 02:32:35 | 8ecb1c6 | Fixed PHPDoc Blocks
+
+Christian Sciberras (1):
+      2017-10-14 04:33:35 | 79ac423 | Fixed mistake in exception expectation
+
+Costin Bereveanu (1):
+      2011-05-19 18:52:45 | ec62915 | Fix process creation under Win7 Ultimate (app/console assetic:dump ./web): - Set the default $env to NULL, thus inheriting the system's environment settings (array() is no good). - Set bypass_shell to false, otherwise process creation will fail (I don't know if this should happen only on Win7)
+
+Daniel Beyer (1):
+      2015-01-19 16:26:55 | ffe91f3 | [Process] Make test AbstractProcessTest::testStartAfterATimeout useful again
+
+Dariusz (1):
+      2017-09-11 12:28:55 | 4e7dcc9 | [CS] Apply phpdoc_annotation_without_dot
+
+Dariusz Górecki (1):
+      2013-04-02 13:39:57 | 40c1a3a | [CS Fix] Consistent coding-style of concatenation operator usage
+
+Dariusz Rumiński (1):
+      2014-12-17 01:59:16 | 5dec118 | CS: There should be no empty lines following phpdocs
+
+David Fuhr (1):
+      2014-11-29 14:55:00 | 50de9a3 | Adjust error_reporting to allow deprecation messages for 3.0
+
+Denis (1):
+      2023-02-13 16:14:55 | 4b842fc | for #49320 (tag: v5.4.23)
+
+Disquedur (1):
+      2014-11-04 17:29:39 | dc88f75 | Remove aligned '=>' and '=' (tag: v2.6.0-BETA2, tag: v2.6.0)
+
+Dominik Piekarski (1):
+      2020-02-11 15:33:01 | 55bebe4 | [Process] Add getter for process starttime
+
+Dominique Bongiraud (1):
+      2011-01-15 16:29:43 | d1f5d99 | normalized license messages in PHP files
+
+Drak (1):
+      2012-10-19 20:43:59 | 6d48335 | Nsdocblocks (tag: v2.1.3)
+
+Evgeniy Sokolov (1):
+      2015-11-10 03:31:08 | fefffad | [2.3][Process] fix Proccess run with pts enabled
+
+Florian Morello (1):
+      2019-04-08 18:40:55 | 1b6958b | Fix missing $extraDirs when open_basedir returns
+
+Francis Besset (1):
+      2015-02-18 17:48:31 | e029ff2 | [2.3][Process] Fixed PhpProcess::getCommandLine() result
+
+François Pluchino (1):
+      2018-01-21 14:04:49 | 1a52627 | [Process] Skip environment variables with false value in Process
+
+GuillaumeVerdon (1):
+      2017-02-01 12:32:26 | f2d1eda | [Process] Non ASCII characters disappearing during the escapeshellarg (tag: v2.7.24)
+
+Gábor Egyed (1):
+      2015-09-26 14:59:49 | 2aa63b9 | Fix license headers
+
+Haralan Dobrev (1):
+      2018-04-03 01:34:16 | 9033c46 | Add PHPDbg support to HTTP components (tag: v2.7.46, tag: v2.7.45)
+
+Helmer Aaviksoo (1):
+      2013-08-08 02:27:53 | 24edc6e | Fix empty process argument escaping on Windows
+
+Jan Rosier (1):
+      2020-01-01 14:03:25 | 5b9d2bc | Update year in license files (tag: v3.4.37)
+
+Jason Stephens (1):
+      2020-06-30 17:19:23 | 721cceb | [Process] Fix Permission Denied error when writing sf_proc_00 lock files on Windows
+
+Javier Eguiluz (1):
+      2016-03-03 15:05:42 | 12b5d09 | Updated all the README files (tag: v2.3.39)
+
+Joel Marcey (1):
+      2013-11-23 02:02:48 | 3ca9657 | Add support for HHVM in the getting of the PHP executable
+
+Joel Wurtz (1):
+      2023-05-17 14:26:05 | e3c46cc | [Process] Stop the process correctly even if underlying input stream is not closed: (tag: v5.4.24)
+
+Johann Pardanaud (1):
+      2017-11-24 13:13:34 | 7bc3a90 | Create a "isTtySupported" static method
+
+John Kary (1):
+      2015-03-22 21:09:34 | 9373172 | [Process] Fix outdated Process->start() docblock
+
+Jonathan Poston (1):
+      2013-10-24 06:56:37 | c264161 | Check if the pipe array is empty before calling stream_select()
+
+Juan Traverso (1):
+      2013-06-16 13:12:20 | 50694ea | [Process] Added support for stdout and stderr flush (Issue #7884)
+
+Julien Falque (1):
+      2021-12-19 19:27:15 | a35d6b8 | Run `open_basedir` tests in separate processes (tag: v4.4.36)
+
+Julien Moulin (1):
+      2013-03-02 21:41:21 | 899a0e7 | #7106 - fix for ZTS builds (tag: v2.1.9)
+
+Jérémy JOURDIN (1):
+      2014-07-28 17:26:43 | 61b85c3 | Use separated function to resolve command and related arguments
+
+Kim Hemsø Rasmussen (1):
+      2012-04-12 01:08:57 | 9b5cfa8 | [process] Added destructor to process to make sure handles are always closed in the right order.
+
+Kirill Lazarev (1):
+      2021-11-24 02:20:44 | b546181 | [Process] intersect with getenv() in case-insensitive manner to get default envs
+
+Laurent Ghirardotti (1):
+      2014-09-26 14:51:50 | 0434822 | [Doc] Use Markdown syntax highlighting (tag: v2.3.22, tag: v2.3.21)
+
+Loulier Guillaume (1):
+      2020-02-07 21:31:10 | bf9166b | refactor(Process): fromShellCommandLine (tag: v4.4.5)
+
+Loïck Piera (1):
+      2015-03-27 18:14:25 | e2b677d | Update phpdoc of ProcessBuilder#setPrefix()
+
+Luis Cordova (1):
+      2014-01-07 02:25:20 | 2c19fff | update year on licenses
+
+Lukas Kahwe Smith (1):
+      2011-11-04 00:11:40 | c2d9e1c | added basic README files for all components
+
+Manatsawin Hanmongkolchai (1):
+      2014-07-01 17:28:47 | f456ff6 | [Process] Use correct test for empty string in UnixPipes
+
+Markus Staab (1):
+      2015-02-13 18:10:22 | 562f372 | [PROCESS] make sure /dev/tty is readable
+
+Marvin Butkereit (1):
+      2016-01-04 08:42:14 | d9d21cf | [Console] HHVM read input stream bug (tag: v2.8.2)
+
+Matthew J Mucklo (1):
+      2013-06-08 01:35:54 | ac06e1b | fix issue where $_ENV contains array vals
+
+Matthieu Napoli (1):
+      2018-01-21 22:33:21 | 9f3ba7d | Improve phpdoc to make it more explicit (tag: v2.7.41)
+
+Max Voloshin (1):
+      2013-11-06 02:13:55 | 4555201 | [Process] fixed fatal errors in getOutput and getErrorOutput when process was not started
+
+Maxime Steinhausser (1):
+      2019-07-10 10:40:26 | dd0991b | [Process] Deprecate Process::inheritEnvironmentVariables()
+
+Maxime Veber (1):
+      2018-06-27 15:55:52 | 04b8512 | [Process] Add feature \"wait until callback\" to process class
+
+Michael Voříšek (1):
+      2021-10-03 18:40:55 | b076aa9 | Fix "can not" spelling
+
+Michal Gebauer (1):
+      2013-09-10 00:28:39 | 641edc6 | [Process] Fix: Arguments including space and quote are not correctly escaped (win)
+
+Michel Bardelmeijer (1):
+      2020-04-07 22:12:26 | 25ae024 | Supress error from fread when reading a unix pipe
+
+Máximo Cuadros Ortiz (1):
+      2013-04-05 14:35:05 | 7d69002 | [Process] Added support for processes that need a TTY to run.
+
+Niklas Keller (1):
+      2017-02-18 15:12:14 | ebe8e91 | Fix typo in process error message
+
+Osman Üngür (1):
+      2011-07-11 20:37:49 | a6e3796 | Fixed problems with running processes returns wrong exitcode (-1) on Linux.
+
+Paráda József (1):
+      2016-02-27 00:16:08 | 798aa27 | [Process] Remove unreachable return statement.
+
+Patrick Allaert (1):
+      2013-07-09 17:42:15 | d93f372 | Fixed #8455: PhpExecutableFinder::find() does not always return the correct binary (tag: v2.2.5)
+
+Patrick Dawkins (1):
+      2017-03-27 19:26:57 | 57fdaa5 | [Process] Fix bug which wiped or mangled env vars (tag: v3.2.7)
+
+Pedro Magalhães (1):
+      2017-06-27 19:14:10 | 95c5ed0 | Identify tty tests in Component/Process (tag: v2.7.34, tag: v2.7.33, tag: v2.7.32, tag: v2.7.31, tag: v2.7.30)
+
+Peter Gribanov (1):
+      2014-01-03 19:45:57 | 7ec42af | Add support SAPI cli-server (tag: v2.3.9)
+
+Pierre Tachoire (1):
+      2012-12-19 01:02:51 | d907fe7 | [Process] Allow non-blocking start with PhpProcess (tag: v2.1.6, tag: v2.1.5)
+
+Reedy (1):
+      2019-10-12 03:27:05 | 08e15d5 | Add .gitignore to .gitattributes
+
+Rein Baarsma (1):
+      2021-12-09 19:18:10 | c1d5c35 | [Process] fixed uppercase ARGC and ARGV should also be skipped
+
+Richard Quadling (1):
+      2015-09-16 16:19:29 | c0a76be | Update Process.php (tag: v2.3.33)
+
+Richard van Laak (1):
+      2015-06-08 13:48:52 | 475c3ff | Include working directory in ProcessFailedException
+
+Rick Prent (1):
+      2013-06-13 23:00:58 | 18e399f | Feature/fix unit tests
+
+Roland Franssen (1):
+      2018-09-21 14:50:11 | a54c3e0 | Favor LogicException for missing classes & functions
+
+Roman Tymoshyk (1):
+      2019-07-17 15:34:41 | f14afdf |  [Process] Path resolution for FCGI configuration
+
+Sebastian Marek (1):
+      2012-04-25 18:42:54 | 18e8fed | [Process] Fixed ProcessFailedException not populating exception message due to a missing sprintf parameter
+
+Simon Asika (1):
+      2022-04-04 11:56:32 | 9eedd60 | [Process] Fix Process::getEnv() when setEnv() hasn't been called before (tag: v4.4.41)
+
+Sullivan SENECHAL (1):
+      2018-01-12 14:47:51 | 80504db | Introduce signaled process specific exception class
+
+Thomas (1):
+      2010-09-20 02:40:30 | b271113 | [Process] remove fork references as proc_* functions start a command from an independant process, does not copy the parent memory space like pcntl_* function
+
+Titouan Galopin (1):
+      2017-12-08 13:23:50 | 80eeb71 | Remove some unused variables, properties and methods
+
+TravisCarden (1):
+      2013-01-31 22:27:04 | 861d3e6 | Remove executable bit from all PHP files
+
+Tugdual Saunier (1):
+      2012-11-19 21:07:58 | a793802 | [Process][Tests] fixed chainedCommandsOutput tests (tag: v2.1.4)
+
+Tóth Gábor (1):
+      2013-08-21 18:50:47 | 0f58865 | fix for Process:isSuccessful()
+
+Ulugbek Miniyarov (1):
+      2018-10-21 12:15:11 | 8a0fea0 | [Process] Adds usleep(1000) to ease CPU usage.
+
+Victor Berchet (1):
+      2012-03-30 15:49:28 | 2e4da8c | [PhpUnit] Fix the path to the boostrap files in the components
+
+Vitaliy Zakharov (1):
+      2013-04-11 17:44:10 | fb7625f | [Process] added exit code to ProcessFailedException message
+
+Vyacheslav Pavlov (1):
+      2016-07-22 17:17:18 | 8068c35 | Fixed bugs in names of classes and methods.
+
+Włodzimierz Gajda (1):
+      2012-11-08 13:51:48 | 5437d5f | Fix export-ignore on Windows
+
+Yassine Guedidi (1):
+      2023-04-02 03:55:08 | 32ac96f | Apply no_null_property_initialization PHP-CS-Fixer rule
+
+Yevgen Kovalienia (1):
+      2014-09-23 02:14:46 | 18f95e7 | typo fixed in AbstractProcessTest (getoutput() => getOutput()) (tag: v2.3.20)
+
+Yonel Ceruto (1):
+      2016-09-02 21:13:13 | 86be324 | Code enhancement and cleanup (tag: v2.7.18)
+
+Yurun (1):
+      2022-07-18 11:59:48 | 18036fe | Refactor isTtySupported()
+
+annesosensio (1):
+      2016-03-31 11:26:29 | 89aced1 | [Process] use __METHOD__ where applicable (tag: v2.3.42, tag: v2.3.41, tag: v2.3.40, origin/2.3)
+
+bch36 (1):
+      2021-06-08 19:05:01 | 7e812c8 | [Process] Fix incorrect parameter type (tag: v4.4.26)
+
+dFayet (1):
+      2019-06-11 13:13:09 | 802a854 | Replace @return annotation by return type in final classes
+
+jgonzalezlopez (1):
+      2014-06-18 15:43:36 | 0c367d6 | Update WindowsPipes.php
+
+lenar (1):
+      2011-06-22 17:16:44 | a6f47e2 | Make run() fully non-blocking and fix potential other problems
+
+lol768 (1):
+      2014-02-02 17:42:18 | d5cfffe | Fix wording for Process class documentation
+
+marc.weistroff (1):
+      2012-02-22 13:08:30 | 8a1803b | Updated LICENSE files copyright
+
+mshavliuk (1):
+      2019-05-22 02:21:35 | afe411c | [Process] Fix infinite waiting for stopped process (tag: v3.4.28)
+
+reecefowell (1):
+      2015-06-07 09:33:05 | 552d8ef | Silence invasive deprecation warnings, opt-in for warnings (tag: v2.7.1)
+
+soyuka (1):
+      2020-04-09 20:51:19 | 6db519e | [PhpUnitBridge] add PolyfillTestCaseTrait::expectExceptionMessageMatches to provide FC with recent phpunit versions
+
+temperatur (1):
+      2018-03-19 16:47:13 | 2fc5810 | Fixes #26563 (open_basedir restriction in effect) (tag: v2.7.44)
+
+tigitz (1):
+      2023-01-01 21:45:34 | 21b4d0c | Leverage arrow function syntax for closure
+
